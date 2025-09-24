@@ -4,97 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jose Gregorio</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="main.css">
+  <!-- Font Awesome para ícones sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- HEADER: Cabeçalho da página -->
+
+  <!-- HEADER: Cabeçalho -->
   <header>
     <h1>Jose <span>Gregorio</span></h1>
-    <button id="theme-toggle" aria-label="Toggle dark/light mode"></button> 
-    <!-- nesse botão eu vou colocar um light and dark mode para ligar/desligar -->
+    <!-- Botão de tema escuro/claro -->
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button> 
   </header>
 
-  <!-- NAV: Navegação principal -->
+  <!-- NAV: Navegação lateral -->
   <nav>
     <a href="#frontend">Frontend</a>
     <a href="#backend">Backend</a>
     <a href="#sql">SQL</a>
-    <!-- links para acessar cada seção do meu portfólio -->
   </nav>
 
-  <!-- ASIDE: Conteúdo complementar (sobre mim, links, etc.) -->
+  <!-- ASIDE: Conteúdo complementar -->
   <aside>
-    <!-- Descrição sobre mim -->
-    <section class="about-me" >
-      <h2></h2>About Me</h2>
-      <p>Aqui eu vou falar um pouco sobre mim.</p>
+    <!-- Sobre mim -->
+    <section class="about-me">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, accusantium porro reiciendis totam iusto dignissimos quia nihil atque sequi architecto blanditiis doloribus ipsa, quasi nam aliquid corrupti, voluptate sapiente aut!
+      </p>
     </section>
 
-    <!-- Links importantes -->
+    <!-- Links importantes / Botões -->
     <section class="my-links">
       <ul>
-        <li><a href="#playground" class="btn">MyGamePlayGround</a></li> <!-- Primeiro botão/link -->
+        <!-- Botão do GamePortFolio -->
+        <li>
+          <a href="#playground" class="btn" title="Clique para ver meu GamePortFolio">🎮</a>
+        </li>
 
+        <!-- Botão de redes sociais -->
         <li class="social-wrapper">
-  <button class="btn" id="social-btn" title="Clique para ver minhas redes sociais">My Social Medias</button>
-  
-  <!-- Redes sociais -->
-  <div class="social-links">
-    <a href="#" target="_blank" class="social-item">LinkedIn</a>
-    <a href="#" target="_blank" class="social-item">GitHub</a>
-    <a href="#" target="_blank" class="social-item">Instagram</a>
-  </div>
-</li>
+          <button class="btn" id="social-btn" title="Clique para ver minhas redes sociais">🌐</button>
+          <div class="social-links">
+            <a href="#" target="_blank" class="social-item" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" target="_blank" class="social-item" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" class="social-item" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <!-- Para adicionar nova rede, só incluir mais <a> -->
+          </div>
+        </li>
 
-        <li><a href="#learn-more" class="btn">Learn More</a></li>
+        <!-- Botão aprender mais -->
+        <li>
+          <a href="#learn-more" class="btn" title="Clique para ver mais sobre Jose Gregorio">📖</a>
+        </li>
       </ul>
     </section>
   </aside>
 
-  <!-- MAIN: Conteúdo principal da página -->
+  <!-- MAIN: Conteúdo principal -->
   <main>
-    <!-- Seção Frontend -->
-    <section>
+    <!-- Frontend -->
+    <section id="frontend">
       <h2>Frontend Projects</h2>
-      <button></button> <!-- botão para passar os artigos (carrossel) -->
       <article>
         <figure>
-          <a href="">Projeto Frontend</a> 
-          <!-- aqui eu vou adicionar o link para acessar meu projeto -->
+          <a href="#">Projeto Frontend</a>
         </figure>
       </article>
     </section>
 
-    <!-- Seção Backend -->
-    <section>
+    <!-- Backend -->
+    <section id="backend">
       <h2>Backend Projects</h2>
-      <button></button> <!-- botão para passar os artigos (carrossel) -->
       <article>
         <figure>
-          <a href="">Projeto Backend</a> 
+          <a href="#">Projeto Backend</a>
         </figure>
       </article>
     </section>
 
-    <!-- Seção SQL -->
-    <section>
+    <!-- SQL -->
+    <section id="sql">
       <h2>SQL Knowledge</h2>
       <article>
         <figure>
-          <a href="">Exemplo de Projeto SQL</a> 
-          <!-- aqui eu vou mostrar meus conhecimentos em SQL -->
+          <a href="#">Exemplo de Projeto SQL</a>
         </figure>
       </article>
     </section>
   </main>
 
-  <!-- FOOTER: Rodapé global -->
+  <!-- FOOTER -->
   <footer>
-    <!-- aqui vou adicionar informações de rodapé -->
     <p>© 2025 Jose Gregorio. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPT: arquivo JS externo -->
+  <!-- SCRIPT -->
   <script src="app.js"></script>
 </body>
 </html>
