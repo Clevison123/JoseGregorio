@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+:root {
+  /* Fontes */
+  --fontText: 'Inter', sans-serif;
+  --fontTitle: 'Poppins', sans-serif;
+
+  /* Cores padrão (Dark Mode) */
+  --HeaderBg: #0D0D0D;
+  --TextPrimary: #E5E7EB;
+  --TextSecondary: #9CA3AF;
+  --ColorHighlight: #10B981;
+  --Fundo: #0D0D0D;
+  --FooterBg: #1F2937;
+  --ButtonBg: #10B981;
+  --ButtonHover: #047857;
+  --ButtonText: #FFFFFF;
+}
+
+body.light-mode {
+  --HeaderBg: #FFFFFF;
+  --TextPrimary: #111827;
+  --TextSecondary: #4B5563;
+  --ColorHighlight: #047857;
+  --Fundo: #FFFFFF;
+  --FooterBg: #F3F4F6;
+  --ButtonBg: #10B981;
+  --ButtonHover: #047857;
+  --ButtonText: #FFFFFF;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--HeaderBg);
+  color: var(--TextPrimary);
+}
+
+/* Título */
+h1 {
+  font-family: var(--fontTitle);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+h1 span {
+  color: var(--ColorHighlight);
+}
+
+/* Botão toggle */
+button#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--TextPrimary);
+  transition: transform 0.3s;
+}
+
+button#theme-toggle:hover {
+  transform: scale(1.1);
+}
+/*---------------------------------------*/
+
+/* Sidebar fixa no desktop */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: var(--HeaderBg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  gap:  1.5rem;
+  z-index: 1000;
+}
+
+/* Links da sidebar */
+nav a {
+  font-family: var(--fontText);
+  font-size: 1rem;
+  color: var(--TextPrimary);
+  transition:  color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  color: var(--ColorHighlight);
+  transform: scale(1.05);
+}
+
+/*////////////////////////////////////*/
+/* Aside fixo à esquerda */
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--HeaderBg);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/*seção about me*/
+.about-me h2{
+  font-family: var(--fontTitle);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--TextPrimary);
+}
+
+.about-me p {
+  font-family: var(--fontText);
+  font-size: 1rem;
+  color: var(--TextSecondary);
+  line-height: 1.5;
+}
+
+/* Links como botões */
+.my-links ul {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.my-links li {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-family: var(--fontText);
+  font-size: 1rem;
+  color: var(--ButtonText);
+  background-color: var(--ButtonBg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--ButtonHover);
+  transform: scale(1.03);
+}
+
+/* Redes sociais escondidas inicialmente */
+.social-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Botão principal */
+.social-wrapper .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-family: var(--fontText);
+  font-size: 1rem;
+  color: var(--ButtonText);
+  background-color: var(--ButtonBg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.social-wrapper .btn:hover {
+  background-color: var(--ButtonHover);
+  transform: scale(1.03);
+}
+
+/* Container das redes sociais */
+.social-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* bloqueia interação quando invisível */
+}
+
+.social-links .social-item {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--ButtonBg);
+  color: var(--ButtonText);
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  font-size: 0.8rem;
+}
+
+/* Mostrar redes sociais quando ativo */
+.social-wrapper.active .social-links .social-item {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Posições em forma de octógono */
+.social-wrapper.active .social-links .social-item:nth-child(1) {
+  transform: translate(-60px, -60px);
+}
+.social-wrapper.active .social-links .social-item:nth-child(2) {
+  transform: translate(0px, -80px);
+}
+.social-wrapper.active .social-links .social-item:nth-child(3) {
+  transform: translate(60px, -60px);
+}

@@ -7,7 +7,94 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <!-- HEADER: Cabeçalho da página -->
+  <header>
+    <h1>Jose <span>Gregorio</span></h1>
+    <button id="theme-toggle" aria-label="Toggle dark/light mode"></button> 
+    <!-- nesse botão eu vou colocar um light and dark mode para ligar/desligar -->
+  </header>
+
+  <!-- NAV: Navegação principal -->
+  <nav>
+    <a href="#frontend">Frontend</a>
+    <a href="#backend">Backend</a>
+    <a href="#sql">SQL</a>
+    <!-- links para acessar cada seção do meu portfólio -->
+  </nav>
+
+  <!-- ASIDE: Conteúdo complementar (sobre mim, links, etc.) -->
+  <aside>
+    <!-- Descrição sobre mim -->
+    <section class="about-me" >
+      <h2></h2>About Me</h2>
+      <p>Aqui eu vou falar um pouco sobre mim.</p>
+    </section>
+
+    <!-- Links importantes -->
+    <section class="my-links">
+      <ul>
+        <li><a href="#playground" class="btn">MyGamePlayGround</a></li> <!-- Primeiro botão/link -->
+
+        <li class="social-wrapper">
+  <button class="btn" id="social-btn" title="Clique para ver minhas redes sociais">My Social Medias</button>
   
+  <!-- Redes sociais -->
+  <div class="social-links">
+    <a href="#" target="_blank" class="social-item">LinkedIn</a>
+    <a href="#" target="_blank" class="social-item">GitHub</a>
+    <a href="#" target="_blank" class="social-item">Instagram</a>
+  </div>
+</li>
+
+        <li><a href="#learn-more" class="btn">Learn More</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- MAIN: Conteúdo principal da página -->
+  <main>
+    <!-- Seção Frontend -->
+    <section>
+      <h2>Frontend Projects</h2>
+      <button></button> <!-- botão para passar os artigos (carrossel) -->
+      <article>
+        <figure>
+          <a href="">Projeto Frontend</a> 
+          <!-- aqui eu vou adicionar o link para acessar meu projeto -->
+        </figure>
+      </article>
+    </section>
+
+    <!-- Seção Backend -->
+    <section>
+      <h2>Backend Projects</h2>
+      <button></button> <!-- botão para passar os artigos (carrossel) -->
+      <article>
+        <figure>
+          <a href="">Projeto Backend</a> 
+        </figure>
+      </article>
+    </section>
+
+    <!-- Seção SQL -->
+    <section>
+      <h2>SQL Knowledge</h2>
+      <article>
+        <figure>
+          <a href="">Exemplo de Projeto SQL</a> 
+          <!-- aqui eu vou mostrar meus conhecimentos em SQL -->
+        </figure>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER: Rodapé global -->
+  <footer>
+    <!-- aqui vou adicionar informações de rodapé -->
+    <p>© 2025 Jose Gregorio. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPT: arquivo JS externo -->
   <script src="app.js"></script>
 </body>
 </html>
