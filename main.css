@@ -7,48 +7,36 @@
   --fontTitle: 'Poppins', sans-serif;
 
   /* DARK MODE */
-  --HeaderBg: #0F111A;          /* header escuro */
-  --TextPrimary: #F5F5F7;       /* texto principal claro */
-  --TextSecondary: #A1A1AA;     /* texto secundário suave */
-  --ColorHighlight: #14B8A6;    /* destaques */
-  --Fundo: #1A1A2E;              /* fundo geral do site */
-  --MainBg: #a7a7a7;             /* fundo do main principal, mais escuro que o site */
-  --FooterBg: #111827;           /* footer escuro */
-  --ButtonBg: #14B8A6;           /* botões */
-  --ButtonHover: #0F766E;        /* hover dos botões */
-  --ButtonText: #FFFFFF;         /* texto dos botões */
-  --Spread: 80px;                /* menus sociais, círculos */
+  --HeaderBg: #111827;
+  --TextPrimary: #F5F5F7;
+  --TextSecondary: #A1A1AA;
+  --ColorHighlight: #14B8A6;
+  --Fundo: #1A1A2E;
+  --MainBg: #1E2247;
+  --FooterBg: #111827;
+  --ButtonBg: #14B8A6;
+  --ButtonHover: #0F766E;
+  --ButtonText: #FFFFFF;
+  --Spread: 80px;
 }
 
 /* LIGHT MODE */
 body.light-mode {
-  --HeaderBg: #FFFFFF;           /* header claro */
-  --TextPrimary: #111827;        /* texto principal escuro */
-  --TextSecondary: #111427;      /* texto secundário mais suave */
-  --ColorHighlight: #0F766E;     /* destaques harmoniosos */
-  --Fundo: #F0F0F5;              /* fundo geral */
-  --MainBg: #E0E0EA;             /* fundo do main principal, diferenciado */
-  --FooterBg: #E5E7EB;           /* footer claro */
-  --ButtonBg: #14B8A6;           /* botões mantidos */
-  --ButtonHover: #0F766E;        /* hover mais escuro */
-  --ButtonText: #FFFFFF;         /* texto do botão */
-  --Spread: 80px;
+  --HeaderBg: #FFFFFF;
+  --TextPrimary: #111827;
+  --TextSecondary: #4B5563;
+  --ColorHighlight: #0F766E;
+  --Fundo: #F0F0F5;
+  --MainBg: #E5E9F0;
+  --FooterBg: #E5E7EB;
+  --ButtonBg: #14B8A6;
+  --ButtonHover: #0F766E;
+  --ButtonText: #FFFFFF;
 }
-
 
 /* Reset básico */
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-  text-decoration: none; list-style: none;
-  scroll-behavior: smooth;
-  transition: all 0.3s ease;
-}
-
-html, body {
-  overflow: hidden;
-  height: 100%;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease; }
+html, body { overflow: hidden; height: 100%; }
 body { font-family: var(--fontText); background-color: var(--Fundo); color: var(--TextPrimary); }
 
 /* Header */
@@ -56,7 +44,7 @@ header {
   position: relative; z-index: 2000;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 6rem; background-color: var(--HeaderBg);
-  color: var(--TextPrimary); box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 h1 { font-family: var(--fontTitle); font-size: clamp(2rem,5vw,3rem); font-weight:700; }
 h1 span { color: var(--ColorHighlight); }
@@ -66,9 +54,8 @@ h1 span { color: var(--ColorHighlight); }
 /* Sidebar */
 nav {
   position: fixed; top:0; right:0; height:100vh; width:200px;
-  background: var(--HeaderBg); display:flex; flex-direction:column;
-  align-items:center; padding-top:8rem; gap:1.5rem;
-  box-shadow:-2px 0 8px rgba(0,0,0,0.2); z-index:1000;
+  background: var(--HeaderBg); display:flex; flex-direction:column; align-items:center;
+  padding-top:10rem; gap:1.5rem; box-shadow:-2px 0 8px rgba(0,0,0,0.2); z-index:1000;
 }
 nav a { font-size:1rem; color:var(--TextPrimary); }
 nav a:hover { color:var(--ColorHighlight); transform:scale(1.05); }
@@ -82,20 +69,18 @@ aside {
 }
 
 /* About Me */
-.about-me p { font-size:1rem; text-align:center; color:var(--TextSecondary); line-height:1.5; margin-top:8rem; }
+.about-me h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align: center; margin-top:8rem; color: var(--ColorHighlight);}
+.about-me p { font-size:1rem; text-align:center; color:var(--TextSecondary); line-height:1.5; margin-top:1rem; }
 
 /* Links / Botões */
-.my-links ul {
-  display:flex; justify-content:center; gap:1rem; margin-top:2rem; padding:0;
-}
+.my-links ul { display:flex; justify-content:center; gap:1rem; margin-bottom:5rem; }
 .my-links li { list-style:none; }
 
-/* Botões base */
+/* Botões */
 .btn, .social-links .social-item {
   width:50px; height:50px; display:flex; align-items:center; justify-content:center;
   background:var(--ButtonBg); color:var(--ButtonText); border:none; border-radius:50%;
   cursor:pointer; font-size:1.5rem; box-shadow:0 4px 8px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
 }
 .btn:hover, .social-links .social-item:hover { transform:scale(1.2); background:var(--ButtonHover); }
 
@@ -103,8 +88,6 @@ aside {
 .social-wrapper { position:relative; display:inline-block; }
 .social-wrapper > .btn { padding:0.75rem 1rem; font-size:1rem; border-radius:8px; }
 .social-wrapper.active > .btn { opacity:0; pointer-events:none; }
-
-/* Social links */
 .social-links {
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
   display:flex; gap:0.5rem; pointer-events:none;
@@ -113,175 +96,54 @@ aside {
 .social-wrapper.active .social-links .social-item {
   opacity:1; pointer-events:auto; transform:scale(1);
 }
-
-/* Distribuição automática em círculo */
-.social-wrapper.active .social-links .social-item:nth-child(1) { transform:translate(-var(--spread), -var(--spread)); }
-.social-wrapper.active .social-links .social-item:nth-child(2) { transform:translate(0, -var(--spread)); }
-.social-wrapper.active .social-links .social-item:nth-child(3) { transform:translate(var(--spread), -var(--spread)); }
-
-/* Outros botões desaparecem */
+.social-wrapper.active .social-links .social-item:nth-child(1) { transform:translate(-var(--Spread), -var(--Spread)); }
+.social-wrapper.active .social-links .social-item:nth-child(2) { transform:translate(0, -var(--Spread)); }
+.social-wrapper.active .social-links .social-item:nth-child(3) { transform:translate(var(--Spread), -var(--Spread)); }
 .my-links.hide-buttons li:not(.social-wrapper) { opacity:0; pointer-events:none; }
 
-/*//////////////////////////////////*/
-
+/* Main */
 main#principal {
-  position: absolute; /* para ficar entre sidebar e aside */
-  top: 0;
-  left: 400px; /* largura do aside */
-  right: 200px; /* largura do nav */
-  height: 100%;
-  background-color: var(--MainBg); 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* esconde tudo que sair da section */
-  padding: 2rem;
-  gap: 2rem;
-  z-index: 500;
-  border-radius: 8px;
+  position: absolute; top: 0; left: 400px; right: 200px; height: 100%;
+  background-color: var(--MainBg); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; overflow: hidden;
+  padding: 2rem; gap: 2rem; z-index: 500; border-radius: 8px;
 }
-
-/* Sections dentro do main: apenas uma visível */
-main#principal section {
-  display: none;
-  width: 100%;
-}
-
-main#principal section.active {
-  display: block;
-}
-
-/* Títulos das sections */
-main#principal section h2 {
-  font-family: var(--fontTitle);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  text-align: center;
-  color: var(--HeaderBg);
-  margin-bottom: 1.5rem;
-}
-
-/* Botões de navegação das sections */
-main#principal > div {
-  display: flex;
-  gap: 1rem;
-}
-
+main#principal section { display: none; width: 100%; }
+main#principal section.active { display: block; }
+main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; }
+main#principal > div { display:flex; gap:1rem; }
 main#principal > div button {
-  padding: 0.5rem 1rem;
-  background-color: var(--ButtonBg);
-  color: var(--ButtonText);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding:0.5rem 1rem; background-color: var(--ButtonBg); color: var(--ButtonText);
+  border:none; border-radius:8px; cursor:pointer;
 }
+main#principal > div button:hover { background-color: var(--ButtonHover); transform:scale(1.05); }
 
-main#principal > div button:hover {
-  background-color: var(--ButtonHover);
-  transform: scale(1.05);
-}
-
-.projetosSite {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-/* Card principal */
+/* Projetos */
+.projetosSite { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin:2rem 0; }
 .btn-projeto {
-  display: block;
-  width: 250px;
-  height: 200px;
-  border-radius: 1rem;
-  overflow: hidden;
-  text-decoration: none;
-  color: var(--ButtonText);
-  perspective: 1000px;
-  transition: transform 0.3s;
-  animation: fadeInUp 0.6s ease forwards;
+  width:250px; height:200px; border-radius:1rem; overflow:hidden; text-decoration:none;
+  color:var(--ButtonText); perspective:1000px; transition:transform 0.3s; animation:fadeInUp 0.6s ease forwards;
 }
-
-.btn-projeto:hover {
-  transform: translateY(-8px) scale(1.03);
-}
-
-/* Conteúdo do card com gradiente animado */
+.btn-projeto:hover { transform:translateY(-8px) scale(1.03); }
 .card-content {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--ButtonBg), var(--ColorHighlight));
-  background-size: 400% 400%;
-  animation: gradientAnim 10s ease infinite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.35);
-  text-align: center;
+  width:100%; height:100%; background:linear-gradient(135deg, var(--ButtonBg), var(--ColorHighlight));
+  background-size:400% 400%; animation:gradientAnim 10s ease infinite;
+  display:flex; flex-direction:column; justify-content:center; align-items:center; padding:1rem; border-radius:1rem;
+  box-shadow:0 8px 16px rgba(0,0,0,0.35); text-align:center;
 }
+.card-content h3 { font-family: var(--fontTitle); margin-bottom:0.5rem; }
+.card-content p { font-family: var(--fontText); font-size:0.9rem; color: var(--TextSecondary); }
 
-.card-content h3 {
-  font-family: var(--fontTitle);
-  margin-bottom: 0.5rem;
-}
+/* Animações */
+@keyframes gradientAnim { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+@keyframes fadeInUp { 0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)} }
 
-.card-content p {
-  font-family: var(--fontText);
-  font-size: 0.9rem;
-  color: var(--TextSecondary);
+/* Footer fixo */
+footer {
+  position: fixed; bottom:0; left:0; right:0; height:60px;
+  background-color: var(--FooterBg); color: var(--TextSecondary); text-align:center; line-height:60px;
+  font-family: var(--fontText); font-size:0.95rem; z-index:1500;
+  box-shadow:0 -2px 8px rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.1);
 }
-
-/* Gradiente animado */
-@keyframes gradientAnim {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Animação de entrada suave */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* FOOTER SOBREPOSTO AO ASIDE E SIDEBAR */
-.site-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;                   /* altura do footer */
-  background-color: var(--FooterBg);
-  color: var(--TextSecondary);
-  text-align: center;
-  line-height: 60px;              /* centraliza verticalmente */
-  font-family: var(--fontText);
-  font-size: 0.95rem;
-  z-index: 3000;                   /* acima do aside e sidebar */
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Ajusta o main para não ficar escondido atrás do footer */
-main#principal {
-  position: absolute;
-  top: 0;
-  left: 400px;    /* largura do aside */
-  right: 200px;   /* largura do sidebar */
-  bottom: 60px;   /* espaço reservado para o footer */
-  background-color: var(--MainBg); 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 2rem;
-  gap: 2rem;
-  z-index: 500;
-  border-radius: 8px;
-}
+footer a { color: var(--ColorHighlight); }
+footer a:hover { color: var(--ButtonHover); }
