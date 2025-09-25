@@ -69,37 +69,67 @@
   </aside>
 
   <!-- MAIN: Conteúdo principal -->
-  <main>
-    <!-- Frontend -->
-    <section id="frontend">
-      <h2>Frontend Projects</h2>
-      <article>
-        <figure>
-          <a href="#">Projeto Frontend</a>
-        </figure>
-      </article>
-    </section>
+  <main id="principal">
 
-    <!-- Backend -->
-    <section id="backend">
-      <h2>Backend Projects</h2>
-      <article>
-        <figure>
-          <a href="#">Projeto Backend</a>
-        </figure>
-      </article>
-    </section>
+  <!-- Frontend -->
+<section id="frontend" class="active">
+  <h2>Frontend Projects</h2>
 
-    <!-- SQL -->
-    <section id="sql">
-      <h2>SQL Knowledge</h2>
-      <article>
-        <figure>
-          <a href="#">Exemplo de Projeto SQL</a>
-        </figure>
-      </article>
-    </section>
-  </main>
+  <div class="projetosSite">
+    <a href="https://meusitefrontend.com" target="_blank" class="btn-projeto">
+      <div class="card-content">
+        <h3>Portfolio Website</h3>
+        <p>Site pessoal mostrando meus projetos e habilidades em HTML, CSS e JS.</p>
+      </div>
+    </a>
+
+    <a href="https://meutodoapp.com" target="_blank" class="btn-projeto">
+      <div class="card-content">
+        <h3>To-Do App</h3>
+        <p>Aplicativo de tarefas com funcionalidades de adicionar, editar e excluir itens.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Backend -->
+<section id="backend">
+  <h2>Backend Projects</h2>
+
+  <div class="projetosSite">
+    <a href="https://meubackend.com" target="_blank" class="btn-projeto">
+      <div class="card-content">
+        <h3>API RESTful</h3>
+        <p>API para gerenciar usuários e tarefas utilizando C# e ASP.NET Core.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- SQL -->
+<section id="sql">
+  <h2>SQL Knowledge</h2>
+
+  <div class="projetosSite">
+    <a href="https://meusqlprojetos.com" target="_blank" class="btn-projeto">
+      <div class="card-content">
+        <h3>AdventureWorks Queries</h3>
+        <p>Exercícios e consultas complexas usando o banco AdventureWorks.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+  <!-- Botões para trocar SECTIONS -->
+  <div class="nav-sections">
+    <button id="prev-section">◀</button>
+    <button id="next-section">▶</button>
+  </div>
+
+</main>
+
+
 
   <!-- FOOTER -->
   <footer>

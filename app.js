@@ -1,6 +1,5 @@
-// ============================
 // DARK/LIGHT MODE TOGGLE
-// ============================
+
 
 // Seleciona o botão de toggle
 const toggleButton = document.getElementById("theme-toggle");
@@ -44,4 +43,52 @@ socialBtn.addEventListener('click', (e) => {
 document.addEventListener('click', () => {
   socialWrapper.classList.remove('active');
   myLinks.classList.remove('hide-buttons');
+});
+
+////////////////////////////////////
+// Carrossel de Sections 
+
+const sections = document.querySelectorAll("#principal section");
+const sectionButtons = document.querySelectorAll("#principal .nav-sections button");
+
+let currentSectionIndex = 0;
+
+function showSection(index) {
+  sections.forEach((sec, i) => {
+    sec.classList.toggle("active", i === index);
+  });
+}
+
+// Inicializa com a primeira section visível
+showSection(currentSectionIndex);
+
+// Navegação pelas sections (botões)
+sectionButtons[0].addEventListener("click", () => {
+  currentSectionIndex = (currentSectionIndex - 1 + sections.length) % sections.length;
+  showSection(currentSectionIndex);
+});
+
+sectionButtons[1].addEventListener("click", () => {
+  currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+  showSection(currentSectionIndex);
+});
+
+
+
+
+// Ligação com Sidebar / Links
+
+const navLinks = document.querySelectorAll("a[href^='#']");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetIndex = Array.from(sections).findIndex(sec => sec.id === targetId);
+
+    if (targetIndex !== -1) {
+      currentSectionIndex = targetIndex;
+      showSection(currentSectionIndex);
+    }
+  });
 });
