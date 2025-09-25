@@ -7,17 +7,16 @@
   --fontTitle: 'Poppins', sans-serif;
 
   /* DARK MODE */
-  --HeaderBg: #111827;
-  --TextPrimary: #F5F5F7;
-  --TextSecondary: #A1A1AA;
-  --ColorHighlight: #14B8A6;
-  --Fundo: #1A1A2E;
-  --MainBg: #1E2247;
-  --FooterBg: #111827;
-  --ButtonBg: #14B8A6;
-  --ButtonHover: #0F766E;
-  --ButtonText: #FFFFFF;
-  --Spread: 80px;
+  --HeaderBg: #111827;       /* Header escuro */
+  --TextPrimary: #F9FAFB;    /* Texto principal */
+  --TextSecondary: #9CA3AF;  /* Texto secundário */
+  --ColorHighlight: #22C55E; /* Verde principal */
+  --Fundo: #1A1A2E;          /* Fundo geral */
+  --MainBg: #1E2247;         /* Fundo seções */
+  --FooterBg: #111827;       /* Footer escuro */
+  --ButtonBg: #22C55E;       /* Botão verde */
+  --ButtonHover: #16A34A;    /* Botão hover */
+  --ButtonText: #FFFFFF;     /* Texto botão */
 }
 
 /* LIGHT MODE */
@@ -25,14 +24,16 @@ body.light-mode {
   --HeaderBg: #FFFFFF;
   --TextPrimary: #111827;
   --TextSecondary: #4B5563;
-  --ColorHighlight: #0F766E;
-  --Fundo: #F0F0F5;
-  --MainBg: #E5E9F0;
+  --ColorHighlight: #22C55E;
+  --Fundo: #F9FAFB;          /* Fundo claro */
+  --MainBg: #E5E9F0;         /* Fundo seções */
   --FooterBg: #E5E7EB;
-  --ButtonBg: #14B8A6;
-  --ButtonHover: #0F766E;
+  --ButtonBg: #22C55E;
+  --ButtonHover: #16A34A;
   --ButtonText: #FFFFFF;
 }
+
+
 
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease; }
