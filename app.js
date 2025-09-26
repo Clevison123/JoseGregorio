@@ -1,173 +1,142 @@
-// ================================
-// DARK/LIGHT MODE TOGGLE
-// ================================
+// DARK / LIGHT MODE
 const toggleButton = document.getElementById("theme-toggle");
 
-// Atualiza o ícone do botão
-function updateThemeIcon() {
-  toggleButton.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-}
-
-// Alterna tema e salva preferência
-function toggleTheme() {
+const updateThemeIcon = () => toggleButton.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+const toggleTheme = () => {
   document.body.classList.toggle("light-mode");
   updateThemeIcon();
   localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
-}
-
-// Aplica preferência salva ao carregar
-function applySavedTheme() {
+};
+const applySavedTheme = () => {
   if (localStorage.getItem("theme") === "light") document.body.classList.add("light-mode");
   updateThemeIcon();
-}
+};
 
-// Event listeners
 toggleButton.addEventListener("click", toggleTheme);
 window.addEventListener("DOMContentLoaded", applySavedTheme);
 
-
-// ================================
 // SOCIAL BUTTON TOGGLE
-// ================================
 const socialWrapper = document.querySelector('.social-wrapper');
 const socialBtn = document.getElementById('social-btn');
 const myLinks = document.querySelector('.my-links');
 
-function toggleSocialMenu(e) {
+socialBtn.addEventListener('click', e => {
   e.stopPropagation();
   socialWrapper.classList.toggle('active');
   myLinks.classList.toggle('hide-buttons');
-}
-
-function closeSocialMenu() {
+});
+document.addEventListener('click', () => {
   socialWrapper.classList.remove('active');
   myLinks.classList.remove('hide-buttons');
-}
+});
 
-socialBtn.addEventListener('click', toggleSocialMenu);
-document.addEventListener('click', closeSocialMenu);
-
-// Blocos
+// BLOCOS
 const main = document.querySelector('#principal');
-const blocos = document.querySelectorAll('.bloco');
+const maxSpeed = 8, acceleration = 0.2, colorTransition = 0.3;
+const randomColor = () => `hsl(${Math.random() * 360}, 70%, 50%)`;
 
-// Função para gerar cor aleatória
-function randomColor() {
-  return `hsl(${Math.random() * 360}, 70%, 50%)`;
+class Bloco {
+  constructor(element) {
+    this.el = element;
+    const { width: bw, height: bh } = element.getBoundingClientRect();
+    const { width: mw, height: mh } = main.getBoundingClientRect();
+    Object.assign(this, { bw, bh, mw, mh });
+
+    this.x = Math.random() * (mw - bw);
+    this.y = Math.random() * (mh - bh);
+    this.vx = (Math.random() - 0.5) * 4;
+    this.vy = (Math.random() - 0.5) * 4;
+
+    this.el.style.transition = `background ${colorTransition}s`;
+    this.updatePos();
+    this.el.addEventListener('mouseenter', () => this.onHover());
+  }
+
+  onHover() {
+    this.vx = (Math.random() - 0.5) * maxSpeed;
+    this.vy = (Math.random() - 0.5) * maxSpeed;
+    this.changeColor();
+  }
+
+  changeColor() { this.el.style.background = randomColor(); }
+  updatePos() { Object.assign(this.el.style, { left: `${this.x}px`, top: `${this.y}px` }); }
+
+  checkWalls() {
+    if (this.x <= 0 || this.x + this.bw >= this.mw) {
+      this.vx = -this.vx * (1 - acceleration);
+      this.x = Math.max(0, Math.min(this.mw - this.bw, this.x));
+      this.changeColor();
+    }
+    if (this.y <= 0 || this.y + this.bh >= this.mh) {
+      this.vy = -this.vy * (1 - acceleration);
+      this.y = Math.max(0, Math.min(this.mh - this.bh, this.y));
+      this.changeColor();
+    }
+  }
+
+  move() { this.x += this.vx; this.y += this.vy; this.updatePos(); }
+
+  checkCollision(other) {
+    if (this.x < other.x + other.bw && this.x + this.bw > other.x && this.y < other.y + other.bh && this.y + this.bh > other.y) {
+      const dx = (this.x + this.bw / 2) - (other.x + other.bw / 2);
+      const dy = (this.y + this.bh / 2) - (other.y + other.bh / 2);
+      const overlapX = (this.bw + other.bw) / 2 - Math.abs(dx);
+      const overlapY = (this.bh + other.bh) / 2 - Math.abs(dy);
+      const impulse = 0.6;
+
+      if (overlapX > 0 && overlapY > 0) {
+        if (overlapX < overlapY) {
+          const shiftX = overlapX * 1.1;
+          this.x += dx > 0 ? shiftX : -shiftX;
+          other.x += dx > 0 ? -shiftX : shiftX;
+          [this.vx, other.vx] = [
+            -other.vx * (1 - acceleration) + Math.sign(dx) * impulse,
+            -this.vx * (1 - acceleration) - Math.sign(dx) * impulse
+          ];
+        } else {
+          const shiftY = overlapY * 1.1;
+          this.y += dy > 0 ? shiftY : -shiftY;
+          other.y += dy > 0 ? -shiftY : shiftY;
+          [this.vy, other.vy] = [
+            -other.vy * (1 - acceleration) + Math.sign(dy) * impulse,
+            -this.vy * (1 - acceleration) - Math.sign(dy) * impulse
+          ];
+        }
+        this.changeColor(); other.changeColor();
+      }
+    }
+  }
 }
 
-// Guardamos dados de movimento em cada bloco
-const blocosData = [];
-
-blocos.forEach((bloco) => {
-  const mainRect = main.getBoundingClientRect();
-  const bw = bloco.offsetWidth;
-  const bh = bloco.offsetHeight;
-
-  // posição inicial aleatória
-  let x = Math.random() * (mainRect.width - bw);
-  let y = Math.random() * (mainRect.height - bh);
-
-  // velocidade inicial aleatória
-  let vx = (Math.random() - 0.5) * 4;
-  let vy = (Math.random() - 0.5) * 4;
-
-  // aplicar posição inicial
-  bloco.style.left = `${x}px`;
-  bloco.style.top = `${y}px`;
-
-  // salvar dados
-  blocosData.push({ bloco, x, y, vx, vy });
-
-  // mudar cor e direção ao passar mouse
-  bloco.addEventListener('mouseenter', () => {
-    data.vx = (Math.random() - 0.5) * 6; // nova direção
-    data.vy = (Math.random() - 0.5) * 6;
-    bloco.style.background = randomColor();
+const blocos = [...document.querySelectorAll('.bloco')].map(el => new Bloco(el));
+(function animate() {
+  const { width: mw, height: mh } = main.getBoundingClientRect();
+  blocos.forEach((b, i) => {
+    Object.assign(b, { mw, mh });
+    b.move(); b.checkWalls();
+    for (let j = i + 1; j < blocos.length; j++) b.checkCollision(blocos[j]);
   });
-
-  const data = blocosData[blocosData.length - 1];
-});
-
-// loop de animação
-function animate() {
-  const mainRect = main.getBoundingClientRect();
-
-  blocosData.forEach((data) => {
-    const { bloco, bw = bloco.offsetWidth, bh = bloco.offsetHeight } = data;
-
-    // mover
-    data.x += data.vx;
-    data.y += data.vy;
-
-    // colisão com bordas
-    if (data.x <= 0 || data.x + bw >= mainRect.width) {
-      data.vx *= -1; // inverter direção
-      bloco.style.background = randomColor(); // mudar cor
-    }
-    if (data.y <= 0 || data.y + bh >= mainRect.height) {
-      data.vy *= -1;
-      bloco.style.background = randomColor();
-    }
-
-    // aplicar nova posição
-    bloco.style.left = `${data.x}px`;
-    bloco.style.top = `${data.y}px`;
-  });
-
   requestAnimationFrame(animate);
-}
+})();
 
-// iniciar quando site carregar
-window.addEventListener('load', () => {
-  animate();
-});
-
-
-// ================================
 // SECTION CAROUSEL
-// ================================
 const sections = document.querySelectorAll("#principal section");
 const sectionButtons = document.querySelectorAll("#principal .nav-sections button");
 let currentSectionIndex = 0;
 
-// Exibe apenas a section selecionada
-function showSection(index) {
-  sections.forEach((sec, i) => sec.classList.toggle("active", i === index));
-}
+const showSection = idx => sections.forEach((sec, i) => sec.classList.toggle("active", i === idx));
+const changeSection = dir => showSection(currentSectionIndex = (currentSectionIndex + dir + sections.length) % sections.length);
 
-// Navegação anterior / próxima
-function prevSection() {
-  currentSectionIndex = (currentSectionIndex - 1 + sections.length) % sections.length;
-  showSection(currentSectionIndex);
-}
-
-function nextSection() {
-  currentSectionIndex = (currentSectionIndex + 1) % sections.length;
-  showSection(currentSectionIndex);
-}
-
-// Inicializa com a primeira section
 showSection(currentSectionIndex);
+sectionButtons[0].addEventListener("click", () => changeSection(-1));
+sectionButtons[1].addEventListener("click", () => changeSection(1));
 
-// Event listeners dos botões do carrossel
-sectionButtons[0].addEventListener("click", prevSection);
-sectionButtons[1].addEventListener("click", nextSection);
-
-
-// ================================
-// SIDEBAR / NAV LINKS
-// ================================
-const navLinks = document.querySelectorAll("a[href^='#']");
-
-navLinks.forEach(link => {
-  link.addEventListener("click", (e) => {
+// SIDEBAR NAV LINKS
+document.querySelectorAll("a[href^='#']").forEach(link => {
+  link.addEventListener("click", e => {
     e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const targetIndex = Array.from(sections).findIndex(sec => sec.id === targetId);
-    if (targetIndex !== -1) {
-      currentSectionIndex = targetIndex;
-      showSection(currentSectionIndex);
-    }
+    const id = link.getAttribute("href").slice(1);
+    const idx = [...sections].findIndex(sec => sec.id === id);
+    if (idx !== -1) showSection(currentSectionIndex = idx);
   });
 });

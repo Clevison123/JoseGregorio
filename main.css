@@ -1,22 +1,26 @@
 @charset "UTF-8";
 
-/* Variáveis */
 :root {
   /* Fontes */
   --fontText: 'Inter', sans-serif;
   --fontTitle: 'Poppins', sans-serif;
+  --fontH1:  'Patrick Hand', cursive;
+
+  /* Ajuste no header para se adaptar aos blocos */
+  --HeaderHeight: 95px;
 
   /* DARK MODE */
-  --HeaderBg: #111827;       /* Header escuro */
-  --TextPrimary: #F9FAFB;    /* Texto principal */
-  --TextSecondary: #9CA3AF;  /* Texto secundário */
-  --ColorHighlight: #22C55E; /* Verde principal */
-  --Fundo: #1A1A2E;          /* Fundo geral */
-  --MainBg: #1E2247;         /* Fundo seções */
-  --FooterBg: #111827;       /* Footer escuro */
-  --ButtonBg: #22C55E;       /* Botão verde */
-  --ButtonHover: #16A34A;    /* Botão hover */
-  --ButtonText: #FFFFFF;     /* Texto botão */
+  --HeaderBg: #111827;    
+  --TextPrimary: #F9FAFB;   
+  --TextSecondary: #9CA3AF;  
+  --ColorHighlight: #22C55E;
+  --Fundo: #1A1A2E;     
+  --MainBg: #1E2247;     
+  --FooterBg: #111827;    
+  --ButtonBg: #22C55E;  
+  --ButtonHover: #16A34A;
+  --ButtonText: #FFFFFF;
+  --LinkText: #FFFFFF;
 }
 
 /* LIGHT MODE */
@@ -25,15 +29,14 @@ body.light-mode {
   --TextPrimary: #111827;
   --TextSecondary: #4B5563;
   --ColorHighlight: #22C55E;
-  --Fundo: #F9FAFB;          /* Fundo claro */
-  --MainBg: #E5E9F0;         /* Fundo seções */
+  --Fundo: #F9FAFB;     
+  --MainBg: #E5E9F0;     
   --FooterBg: #E5E7EB;
   --ButtonBg: #22C55E;
   --ButtonHover: #16A34A;
   --ButtonText: #FFFFFF;
+  --LinkText: #111827;
 }
-
-
 
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease; }
@@ -47,7 +50,7 @@ header {
   padding: 1rem 6rem; background-color: var(--HeaderBg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-h1 { font-family: var(--fontTitle); font-size: clamp(2rem,5vw,3rem); font-weight:700; }
+h1 { font-family: var(--fontH1); font-size: clamp(2rem,5vw,3rem); font-weight:700; }
 h1 span { color: var(--ColorHighlight); }
 #theme-toggle { background:none; border:none; cursor:pointer; font-size:1.5rem; color:var(--TextPrimary); }
 #theme-toggle:hover { transform: scale(1.1); }
@@ -70,8 +73,9 @@ aside {
 }
 
 /* About Me */
-.about-me h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align: center; margin-top:8rem; color: var(--ColorHighlight);}
-.about-me p { font-size:1rem; text-align:center; color:var(--TextSecondary); line-height:1.5; margin-top:1rem; }
+.about-me h3 { font-family: var(--fontTitle); font-size: clamp(1.2rem, 2.5vw, 1.8rem); text-align: center; margin-top:7rem; color: var(--TextSecondary);}
+
+.about-me p { font-size:1rem; text-align: justify; text-indent: 1rem; letter-spacing: 2px; word-spacing: 4px; overflow-wrap: break-word; hyphens: auto; color:var(--TextSecondary); line-height:1.5; margin-top: 1rem; }
 
 /* Links / Botões */
 .my-links ul { display:flex; justify-content:center; gap:1rem; margin-bottom:5rem; }
@@ -103,66 +107,44 @@ aside {
 .my-links.hide-buttons li:not(.social-wrapper) { opacity:0; pointer-events:none; }
 
 /* Main */
-main#principal {
-  position: absolute; top: 0; left: 400px; right: 200px; 
-  min-height: 100vh; 
-  background-color: var(--MainBg); display: flex; flex-direction: column;
-  align-items: center; justify-content: center; overflow: hidden;
-  padding: 2rem; gap: 2rem; z-index: 500; border-radius: 8px;
+main#principal { position: absolute; top: 0; left: 400px; right: 200px; min-height: calc(100vh - 60px - var(--HeaderHeight)); background-color: var(--MainBg); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: 2rem; gap: 2rem; z-index: 500; border-radius: 8px;
+
+  margin-top: var(--HeaderHeight); /* espaço pro header */
+  margin-bottom: 60px; /* espaço pro footer */
 }
 
-.bloco1, .bloco2, .bloco3 {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  border-radius: 10px;
-  z-index: 0; /* Fica atrás do conteúdo */
-  transition: background 0.3s, transform 0.3s;
-}
+/* Estilo base dos blocos */
+.bloco { width: 40px; height: 40px; background: #ccc; position: absolute; transition: transform 0.3s ease, background 0.3s ease;  border-radius: 8px; }
 
-main#principal > *:not(.bloco1):not(.bloco2):not(.bloco3) {
-  position: relative; /* garante que fique acima dos blocos */
-  z-index: 1;
-}
-
+/* Quando o mouse está em cima */
+.bloco.active { background: red; transform: scale(1.2) }
 
 main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }
-main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; }
+main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; position: relative; z-index: 1000; }
+
 main#principal > div { display:flex; gap:1rem; }
-main#principal > div button {
-  padding:0.5rem 1rem; background-color: var(--ButtonBg); color: var(--ButtonText);
-  border:none; border-radius:8px; cursor:pointer;
-}
+main#principal > div button { padding:0.5rem 1rem; background-color: var(--ButtonBg); color: var(--ButtonText); border:none; border-radius:8px; cursor:pointer; z-index: 1000 }
 main#principal > div button:hover { background-color: var(--ButtonHover); transform:scale(1.05); }
 
-/* Projetos */
-.projetosSite { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin:2rem 0; }
-.btn-projeto {
-  width:250px; height:200px; border-radius:1rem; overflow:hidden; text-decoration:none;
-  color:var(--ButtonText); perspective:1000px; transition:transform 0.3s; animation:fadeInUp 0.6s ease forwards;
-}
-.btn-projeto:hover { transform:translateY(-8px) scale(1.03); }
-.card-content {
-  width:100%; height:100%; background:linear-gradient(135deg, var(--ButtonBg), var(--ColorHighlight));
-  background-size:400% 400%; animation:gradientAnim 10s ease infinite;
-  display:flex; flex-direction:column; justify-content:center; align-items:center; padding:1rem; border-radius:1rem;
-  box-shadow:0 8px 16px rgba(0,0,0,0.35); text-align:center;
-}
-.card-content h3 { font-family: var(--fontTitle); margin-bottom:0.5rem; }
-.card-content p { font-family: var(--fontText); font-size:0.9rem; color: var(--TextSecondary); }
+/* Projetos site */
+.projetosSite{ display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 300px; margin: 0 auto; position: relative; z-index: 1000 }
+
+.card-content  ul{ display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 0.5rem; padding: 0; margin: 0; }
+
+.card-content ul li { width: 80px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: var(--ButtonBg); padding: 0.5rem 1rem; border-radius: 8px; font-family: var(--fontText); font-size: 0.9rem; cursor: pointer; transition: transform 0.3s, background 0.3s }
+
+.card-content ul li:hover{ transform: scale(1.1); background-color: var(--ColorHighlight) }
+
+.projetosSite a {  display: flex; align-items: center; justify-content: center; width: 80px; height: 40px; text-align: center; border: 1px solid var(--ButtonBg); color: var(--LinkText); padding: 0.5rem; margin: 0.5rem; border-radius: 8px; cursor: pointer; font-family: var(--fontText); font-size: 0.9rem; box-sizing: border-box; transition: transform 0.3s, background 0.3s }
+
+.projetosSite a:hover{ background-color: var(--ColorHighlight); transform: scale(1.05); }
 
 /* Animações */
 @keyframes gradientAnim { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
 @keyframes fadeInUp { 0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)} }
 
 /* Footer fixo */
-footer {
-  position: fixed; bottom:0; left:0; right:0; height:60px;
-  background-color: var(--FooterBg); color: var(--TextSecondary); text-align:center; line-height:60px;
-  font-family: var(--fontText); font-size:0.95rem; z-index:1500;
-  box-shadow:0 -2px 8px rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.1);
-}
+footer { position: fixed; bottom:0; left:0; right:0; height:60px; background-color: var(--FooterBg); color: var(--TextSecondary); text-align:center; line-height:60px; font-family: var(--fontText); font-size:0.95rem; z-index:1500; box-shadow:0 -2px 8px rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.1) }
 footer a { color: var(--ColorHighlight); }
 footer a:hover { color: var(--ButtonHover); }
