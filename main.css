@@ -104,11 +104,29 @@ aside {
 
 /* Main */
 main#principal {
-  position: absolute; top: 0; left: 400px; right: 200px; height: 100%;
+  position: absolute; top: 0; left: 400px; right: 200px; 
+  min-height: 100vh; 
   background-color: var(--MainBg); display: flex; flex-direction: column;
   align-items: center; justify-content: center; overflow: hidden;
   padding: 2rem; gap: 2rem; z-index: 500; border-radius: 8px;
 }
+
+.bloco1, .bloco2, .bloco3 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 10px;
+  z-index: 0; /* Fica atrás do conteúdo */
+  transition: background 0.3s, transform 0.3s;
+}
+
+main#principal > *:not(.bloco1):not(.bloco2):not(.bloco3) {
+  position: relative; /* garante que fique acima dos blocos */
+  z-index: 1;
+}
+
+
 main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }
 main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; }

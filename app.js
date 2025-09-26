@@ -47,6 +47,82 @@ function closeSocialMenu() {
 socialBtn.addEventListener('click', toggleSocialMenu);
 document.addEventListener('click', closeSocialMenu);
 
+// Blocos
+const main = document.querySelector('#principal');
+const blocos = document.querySelectorAll('.bloco');
+
+// Função para gerar cor aleatória
+function randomColor() {
+  return `hsl(${Math.random() * 360}, 70%, 50%)`;
+}
+
+// Guardamos dados de movimento em cada bloco
+const blocosData = [];
+
+blocos.forEach((bloco) => {
+  const mainRect = main.getBoundingClientRect();
+  const bw = bloco.offsetWidth;
+  const bh = bloco.offsetHeight;
+
+  // posição inicial aleatória
+  let x = Math.random() * (mainRect.width - bw);
+  let y = Math.random() * (mainRect.height - bh);
+
+  // velocidade inicial aleatória
+  let vx = (Math.random() - 0.5) * 4;
+  let vy = (Math.random() - 0.5) * 4;
+
+  // aplicar posição inicial
+  bloco.style.left = `${x}px`;
+  bloco.style.top = `${y}px`;
+
+  // salvar dados
+  blocosData.push({ bloco, x, y, vx, vy });
+
+  // mudar cor e direção ao passar mouse
+  bloco.addEventListener('mouseenter', () => {
+    data.vx = (Math.random() - 0.5) * 6; // nova direção
+    data.vy = (Math.random() - 0.5) * 6;
+    bloco.style.background = randomColor();
+  });
+
+  const data = blocosData[blocosData.length - 1];
+});
+
+// loop de animação
+function animate() {
+  const mainRect = main.getBoundingClientRect();
+
+  blocosData.forEach((data) => {
+    const { bloco, bw = bloco.offsetWidth, bh = bloco.offsetHeight } = data;
+
+    // mover
+    data.x += data.vx;
+    data.y += data.vy;
+
+    // colisão com bordas
+    if (data.x <= 0 || data.x + bw >= mainRect.width) {
+      data.vx *= -1; // inverter direção
+      bloco.style.background = randomColor(); // mudar cor
+    }
+    if (data.y <= 0 || data.y + bh >= mainRect.height) {
+      data.vy *= -1;
+      bloco.style.background = randomColor();
+    }
+
+    // aplicar nova posição
+    bloco.style.left = `${data.x}px`;
+    bloco.style.top = `${data.y}px`;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+// iniciar quando site carregar
+window.addEventListener('load', () => {
+  animate();
+});
+
 
 // ================================
 // SECTION CAROUSEL
