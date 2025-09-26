@@ -1,0 +1,135 @@
+@charset "UTF-8";
+:root {
+  /* Fontes */
+  --fontText: 'Inter', sans-serif;
+  --fontTitle: 'Poppins', sans-serif;
+  --fontH1: 'Patrick Hand', cursive;
+
+  /* Cores */
+  --HeaderBg: #111827;    
+  --TextPrimary: #F9FAFB;   
+  --TextSecondary: #9CA3AF;  
+  --ColorHighlight: #22C55E;
+  --Fundo: #1A1A2E;     
+  --MainBg: #1E2247;     
+  --FooterBg: #111827;    
+  --ButtonBg: #22C55E;  
+  --ButtonHover: #16A34A;
+  --ButtonText: #FFFFFF;
+  --LinkText: #FFFFFF;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;       
+  padding: 1rem 2rem;             
+  background-color: var(--HeaderBg);
+  color: var(--LinkText);
+}
+
+.logo h1 {
+  font-family: var(--fontH1);
+  font-size: clamp(1.5rem, 3vw, 2.5rem); 
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--ColorHighlight); 
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem; 
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-family: var(--fontText);
+  color: var(--LinkText);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--ButtonHover);
+}
+
+.back-btn {
+  background-color: var(--ButtonBg);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: var(--fontText);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: var(--ButtonHover);
+}
+
+main {
+  padding: 2rem;
+  background-color: var(--MainBg);
+  color: var(--TextPrimary);
+  font-family: var(--fontText);
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--Fundo);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+section h2 {
+  font-family: var(--fontTitle);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  color: var(--ColorHighlight);
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--TextSecondary);
+  line-height: 1.6;
+}
+
+.top-btn-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; 
+}
+
+.top-btn-container.show {
+  display: block; 
+}
+
+.top-btn {
+  background-color: var(--ButtonBg);
+  color: var(--ButtonText);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--fontText);
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.top-btn:hover {
+  background-color: var(--ButtonHover);
+  transform: translateY(-2px);
+}
