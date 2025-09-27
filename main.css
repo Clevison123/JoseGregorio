@@ -21,6 +21,7 @@
   --ButtonHover: #16A34A;
   --ButtonText: #FFFFFF;
   --LinkText: #FFFFFF;
+  --mainWorks: #4B5563;
 }
 
 /* LIGHT MODE */
@@ -36,6 +37,7 @@ body.light-mode {
   --ButtonHover: #16A34A;
   --ButtonText: #FFFFFF;
   --LinkText: #111827;
+  --mainWorks: #4B5563;
 }
 
 /* Reset básico */
@@ -136,9 +138,40 @@ main#principal > div button:hover { background-color: var(--ButtonHover); transf
 
 .card-content ul li:hover{ transform: scale(1.1); background-color: var(--ColorHighlight) }
 
-.projetosSite a {  display: flex; align-items: center; justify-content: center; width: 80px; height: 40px; text-align: center; border: 1px solid var(--ButtonBg); color: var(--LinkText); padding: 0.5rem; margin: 0.5rem; border-radius: 8px; cursor: pointer; font-family: var(--fontText); font-size: 0.9rem; box-sizing: border-box; transition: transform 0.3s, background 0.3s }
+.projetosSite a {  display: flex; align-items: center; justify-content: center; width: 80px; height: 40px; text-align: center; border: 1px solid var(--ButtonBg); color: var(--LinkText); padding: 0.5rem; margin: 0.5rem; margin-top: 1rem; border-radius: 8px; cursor: pointer; font-family: var(--fontText); font-size: 0.9rem; box-sizing: border-box; transition: transform 0.3s, background 0.3s }
 
 .projetosSite a:hover{ background-color: var(--ColorHighlight); transform: scale(1.05); }
+
+.worksWiew { display: flex; justify-content: center; align-items: center; max-width: 450px; padding: 1.5rem 2rem; margin: 2rem auto; background: linear-gradient(135deg, var(--mainWorks), rgba(255,255,255,0.05)); backdrop-filter: blur(8px); /* glassmorphism */ border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.25); overflow: hidden; /* necessário para slide */ position: relative; z-index: 1000; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease; }
+
+.worksWiew:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); border-color: var(--ButtonBg); }
+
+/* Conteúdo com fade + slide */
+.card-works-content { line-height: 1.5; letter-spacing: 1px; opacity: 1; transition: transform 0.4s ease, opacity 0.4s ease }
+
+.card-works-content.fade-out {
+  opacity: 0;
+}
+
+.card-works-content.fade-in { opacity: 1; transform: translateX(0); }
+
+.card-works-content a { color: var(--LinkText); transition: color 0.3s ease, transform 0.3s ease;}
+
+.card-works-content a:hover { color: var(--ColorHighlight); transform: scale(1.05); }
+
+/* Navegação */
+.works-navigation { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem;
+}
+
+.work-btn { background: var(--ButtonBg); color: #fff; border: none; padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 1.2rem; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease; position: relative; z-index: 1000;
+}
+
+.work-btn:hover { background: var(--ColorHighlight); transform: translateY(-2px);
+}
+
+.work-btn:active {
+  transform: scale(0.95);
+}
 
 /* Animações */
 @keyframes gradientAnim { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }

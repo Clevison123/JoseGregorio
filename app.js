@@ -30,6 +30,58 @@ document.addEventListener('click', () => {
   myLinks.classList.remove('hide-buttons');
 });
 
+// Works
+const works = [
+  { title: "Freelancer – Frontend", date: "São Paulo – Mai/2023 a Jul/2023", project: "Site para Salão de Beleza", link: "#" }
+  /*{ title: "Freelancer – Backend", date: "São Paulo – Mar/2025 a jun/2025", project: "Sistema de Estoque", link: "#" },*/
+];
+
+const worksView = document.querySelector(".card-works-content");
+const prevBtn = document.querySelector(".work-btn.prev");
+const nextBtn = document.querySelector(".work-btn.next");
+
+let currentIndex = 0;
+
+function showWork(index, direction = 1) {
+  // direction: 1 = next, -1 = prev
+  worksView.classList.add("fade-out");
+  worksView.style.transform = `translateX(${30 * direction}px)`;
+
+  setTimeout(() => {
+    const work = works[index];
+    worksView.innerHTML = `
+      <h3>${work.title}</h3>
+      <p>${work.date}</p>
+      <p>${work.project} <a href="${work.link}" target="_blank">(Site)</a></p>
+    `;
+    // fade-in e slide
+    worksView.classList.remove("fade-out");
+    worksView.classList.add("fade-in");
+    worksView.style.transform = `translateX(0)`;
+
+    setTimeout(() => {
+      worksView.classList.remove("fade-in");
+    }, 400);
+  }, 200);
+}
+
+// Inicializa
+showWork(currentIndex);
+
+// Navegação
+nextBtn.addEventListener("click", () => {
+  currentIndex++;
+  if(currentIndex >= works.length) currentIndex = 0;
+  showWork(currentIndex, 1);
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex--;
+  if(currentIndex < 0) currentIndex = works.length - 1;
+  showWork(currentIndex, -1);
+});
+
+
 // BLOCOS
 const main = document.querySelector('#principal');
 const maxSpeed = 8, acceleration = 0.2, colorTransition = 0.3;
