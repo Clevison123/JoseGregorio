@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+:root {
+  --fontText: 'Inter', sans-serif;
+  --fontTitle: 'Poppins', sans-serif;
+
+  --HeaderBg: #111827;    
+  --TextPrimary: #F9FAFB;   
+  --TextSecondary: #9CA3AF;  
+  --ColorHighlight: #22C55E;
+  --Fundo: #1A1A2E;     
+  --MainBg: #1E2247;  
+  --mainSecodary: #4B5563;   
+  --FooterBg: #111827;    
+  --ButtonBg: #22C55E;  
+  --ButtonHover: #16A34A;
+  --ButtonText: #FFFFFF;
+
+  --line-height:1.5;
+  --letter-spacing: 2px;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin-bottom: 1rem ;
+  font-family: var(--fontTitle);
+  background-color: var(--HeaderBg);
+  color: var(--ButtonText);
+}
+
+header span {
+  color: var(--ButtonBg);
+}
+
+header a {
+  color: var(--ButtonText);
+  border: 1px solid var(--ButtonBg);
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+header a:hover {
+  background: var(--ButtonHover);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: var(--Fundo);
+}
