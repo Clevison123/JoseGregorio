@@ -75,9 +75,9 @@ aside {
 }
 
 /* About Me */
-.about-me h3 { font-family: var(--fontTitle); font-size: clamp(1.2rem, 2.5vw, 1.8rem); text-align: center; margin-top:7rem; color: var(--TextSecondary);}
+.about-me h3 { font-family: var(--fontTitle); font-size: clamp(1.2rem, 2.5vw, 1.8rem); text-align: center; margin-top:10rem; color: var(--TextSecondary);}
 
-.about-me p { font-size:1rem; text-align: justify; text-indent: 1rem; letter-spacing: 2px; word-spacing: 4px; overflow-wrap: break-word; hyphens: auto; color:var(--TextSecondary); line-height:1.5; margin-top: 1rem; }
+.about-me p { font-size:1rem; text-align: justify; text-indent: 1.1rem; letter-spacing: 2px; word-spacing: 4px; overflow-wrap: break-word; hyphens: auto; color:var(--TextSecondary); line-height:1.5; margin: 0 1rem; margin-top: 1rem; }
 
 /* Links / Botões */
 .my-links ul { display:flex; justify-content:center; gap:1rem; margin-bottom:5rem; }
