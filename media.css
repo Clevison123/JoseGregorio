@@ -70,7 +70,6 @@
 
   .btn, .social-links .social-item{
     width:42px; height:42px;
-
   }
 
   /* Main abaixo do aside */
@@ -83,7 +82,31 @@
     margin:0;
     min-height: auto;
     border-radius: 0;
-    padding: .7rem;
+    padding: 1.2rem 1rem;
+  }
+
+  main#principal section h2 {
+    font-size: var(--FontSizeH3Mobile);
+    margin-bottom: .5rem;
+  }
+
+  main#principal > div button {
+    margin: 0;
+  }
+
+  .card-content  ul {
+    gap: .4rem;
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .card-content ul li {
+    width: 75px; height: 30px;
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .projetosSite a {
+    width: 70px; height: 35px;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   .worksWiew {
@@ -113,14 +136,13 @@
  nav {
     position: fixed;
     bottom: 0;
-    top: auto;      /* remove fixo no topo */
-    right: auto;    /* remove fixo na direita */
-    left: 0;        /* cola na esquerda */
-    width: 100%;    /* ocupa toda a largura */
-    height: auto;   /* não precisa altura toda */
-    background: var(--HeaderBg);
+    top: auto;      
+    right: auto;    
+    left: 0;        
+    width: 100%;    
+    height: auto;  
     display: flex;
-    flex-direction: row; /* links lado a lado */
+    flex-direction: row; 
     justify-content: space-around;
     align-items: center;
     padding: .6rem 0;
@@ -129,21 +151,8 @@
     z-index: 3000;
   }
 
-  nav a {
-    flex: 1; /* cada link ocupa espaço igual */
-    text-align: center;
-    font-size: .9rem; /* levemente menor no mobile */
-    color: var(--TextPrimary);
-  }
-
-  nav a:hover {
-    color: var(--ColorHighlight);
-    transform: scale(1.05);
-  }
-
-  /* garante que o footer não fique escondido atrás do nav */
   footer {
-    padding-bottom: 3.5rem; /* altura do nav */
+    display: none;
   }
 
 
