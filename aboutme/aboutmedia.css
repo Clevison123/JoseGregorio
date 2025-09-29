@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+:root{
+  --FontFamily:'Inter', sans-serif;
+  --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
+  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); 
+  --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
+  --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
+  --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
+  --LineHeightTextos: 1.5;
+  --ButtonsMenuMobile: clamp(0.85rem, 2vw, 1rem);
+  --ButtonsMenuDeskTop: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+/* 📱 SMALL DEVICES (PHONES) */
+
+@media (max-width: 320px){
+  header h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  header a {
+    font-size: var(--ButtonsMenuMobile);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: .8rem .5rem;
+  }
+
+  .Introduction {
+    padding: .5rem;
+  }
+
+  .Introduction h2 {
+    font-size: var(--FontSizeH3MobileMobile);
+    margin-bottom: .2rem; 
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosMobile);
+    margin: 0 .4rem; 
+    margin-bottom: .4rem;
+  }
+
+  #extra{
+    padding: .5rem;
+  }
+
+  #extra h2 {
+    font-size: var(--FontSizeH3MobileMobile);
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .floatBlock i {
+    font-size: .9rem;
+  }
+
+}
+
+/* 📱 Smartphones médios (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px){
+  header h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  header a {
+    font-size: var(--ButtonsMenuMobile);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: .8rem .5rem;
+  }
+
+  .Introduction {
+    padding: .5rem;
+  }
+
+  .Introduction h2 {
+    font-size: var(--FontSizeH3MobileMobile);
+    margin-bottom: .2rem; 
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosMobile);
+    margin: .5rem .4rem; 
+  }
+
+  #extra{
+    padding: .5rem;
+  }
+
+  #extra h2 {
+    font-size: var(--FontSizeH3MobileMobile);
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .floatBlock i {
+    font-size: 1rem;
+  }
+}
+
+/* ================================= */
+/* 📟 MEDIUM DEVICES (TABLETS) */
+/* ================================= */
+
+/* Tablets pequenos (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px){
+  header h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  header a {
+    font-size: var(--ButtonsMenuMobile);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: .8rem .5rem;
+  }
+
+  .Introduction {
+    padding: 1rem;
+  }
+
+  .Introduction h2 {
+    font-size: var(--FontSizeH3Mobile);
+    margin-bottom: .2rem; 
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosMobile);
+    margin: 0 .5rem; 
+    margin-bottom: .3rem;
+  }
+
+  #extra{
+    padding: 1rem;
+  }
+
+  #extra h2 {
+    font-size: var(--FontSizeH3Mobile);
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .floatBlock i {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px){
+  
+
+  .Introduction {
+    padding: 1rem;
+  }
+
+  .Introduction h2 {
+    font-size: var(--FontSizeH3Mobile);
+    margin-bottom: 1.5rem; 
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosMobile);
+    margin: 0 .4rem; 
+  }
+
+  #extra{
+    padding: 1rem;
+  }
+
+  #extra h2 {
+    font-size: var(--FontSizeH3Mobile);
+    margin-bottom: 1.5rem; 
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  .floatBlock i {
+    font-size: 1.3rem;
+  }
+}
+
+/* ================================= */
+/* 💻 LARGE DEVICES (DESKTOPS & LAPTOPS) */
+/* ================================= */
+
+/* Notebooks pequenos (1025px - 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px){
+  
+
+  .Introduction h2 {
+    font-size: var(--FontSizeTitulosMobile);
+    margin-bottom: 1.5rem; 
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosDesktop);
+    margin: 0 .4rem; 
+  }
+
+
+  #extra h2 {
+    font-size: var(--FontSizeTitulosMobile);
+    margin-bottom: 1.5rem; 
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  
+}
+
+/* Monitores Full HD (1367px - 1920px) */
+@media (min-width: 1367px) and (max-width: 1920px){
+  
+  .Introduction h2 {
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  .Introduction p {
+    font-size: var(--FontSizeTextosDesktop);
+    margin: 0 .4rem; 
+  }
+
+  #extra h2 {
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  .floatBlock a {
+    font-size: var(--FontSizeTextosDesktop);
+  }
+}
+
+/* Extra large screens (4K, 1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px){
+
+  header h1 {
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  header a {
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  main{
+    display: flex;
+    gap: 3rem;
+    margin-top: 9rem;
+    width: 100%;
+  }
+
+  section.Introduction{
+    flex: 2;
+  }
+
+  aside#extra{
+    flex: 1;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  section.Introduction h2,
+  aside#extra h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  section.Introduction p,
+  aside#extra ul li a{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+}
+
+/* Ultra wide screens (>2561px) */
+@media (min-width: 2561px){
+  header h1 {
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  header a {
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  main{
+    display: flex;
+    gap: 3.5rem;
+    margin-top: 10rem;
+    width: 100%;
+  }
+
+  section.Introduction{
+    flex: 2;
+  }
+
+  aside#extra{
+    flex: 1;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  section.Introduction h2,
+  aside#extra h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  section.Introduction p,
+  aside#extra ul li a{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+}

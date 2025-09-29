@@ -183,8 +183,10 @@ showSection(currentSectionIndex);
 sectionButtons[0].addEventListener("click", () => changeSection(-1));
 sectionButtons[1].addEventListener("click", () => changeSection(1));
 
-// SIDEBAR NAV LINKS
-document.querySelectorAll("a[href^='#']").forEach(link => {
+// SIDEBAR / NAV LINKS 
+const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+navLinks.forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
     const id = link.getAttribute("href").slice(1);
@@ -192,3 +194,4 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
     if (idx !== -1) showSection(currentSectionIndex = idx);
   });
 });
+
