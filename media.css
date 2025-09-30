@@ -10,15 +10,7 @@
   --fs-small: clamp(0.85rem, 2vw, 1rem);
   --fs-btn: clamp(0.9rem, 2vw, 1.1rem);
 
-  /* Espaçamentos */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-
-  /* Layout */
-  --header-height: 5.5rem;
-  --nav-height: 3.5rem;
+  
 }
 
 /* 📱 SMALL DEVICES (PHONES) */
@@ -27,10 +19,10 @@
 @media (max-width: 320px) {
 
   body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
 
   /* Header fixo no topo */
   header {
@@ -45,11 +37,11 @@
   }
 
    header h1 {
-    font-size: var(--FontSizeTitulosMobile);
+    font-size: var(--fs-h3);
    }
 
   #theme-toggle {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-btn);
    }
 
   /* Aside abaixo do header */
@@ -59,28 +51,28 @@
     left: auto;
     width: 100%;
     height: auto;
-    margin-top: 1rem;
-    padding: .1rem 0;
+    margin-top: 1.5rem;
+    padding: 1.5rem 0;
     box-shadow: none;
   }
 
   .about-me h3 {
-    font-size: var(--FontSizeH3Mobile);
-    margin-top: 1.9rem;
+    font-size: var(--fs-h3);
+    margin-top: 1.5rem;
   }
 
   .about-me p{
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
   .my-links ul {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-small);
     margin: 1rem;
   }
 
   .btn, .social-links .social-item{
-    width:32px; height:32px;
-    font-size: var(--ButtonsMenuMobile);
+    width:27px; height:27px;
+    font-size: var(--fs-small);
   }
 
   /* Main abaixo do aside */
@@ -90,31 +82,27 @@
     left: auto;
     right: auto;
     width: 100%;
-    height: 59vh;
     margin: 0;
     min-height: auto;
     border-radius: 0;
-    padding: 0;
+    padding: 0 ;
   }
 
   main#principal section h2 {
-    font-size: var(--FontSizeH3Mobile);
+    font-size: var(--fs-h3);
     margin: 1rem;
   }
 
   .projetosSite {
-    font-size: var(--FontSizeTextosMobile);
-    max-width: 240px;
+    max-width: 270px;
   }
 
   .card-content  ul {
-    gap: .2rem;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
   .card-content ul li {
     width: 75px; height: 40px;
-    font-size: var(--FontSizeTextosMobile);
   }
 
   .projetosSite a {
@@ -123,7 +111,7 @@
   }
 
   .worksWiew {
-    max-width: 400px; padding: .5rem 0;
+    max-width: 270px; padding: .5rem 0;
     margin: 1.2rem auto;
   }
 
@@ -133,7 +121,7 @@
   }
 
   .card-works-content {
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
 
@@ -188,11 +176,11 @@
   }
 
    header h1 {
-    font-size: var(--FontSizeTitulosMobile);
+    font-size: var(--fs-h3);
    }
 
   #theme-toggle {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-btn);
    }
 
   /* Aside abaixo do header */
@@ -202,28 +190,28 @@
     left: auto;
     width: 100%;
     height: auto;
-    margin-top: 3rem;
-    padding: .1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem 0;
     box-shadow: none;
   }
 
   .about-me h3 {
-    font-size: var(--FontSizeH3Mobile);
+    font-size: var(--fs-h3);
     margin-top: .5rem;
   }
 
   .about-me p{
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
   .my-links ul {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-btn);
     margin: 1rem;
   }
 
   .btn, .social-links .social-item{
-    width:32px; height:32px;
-    font-size: var(--ButtonsMenuMobile);
+    width:28px; height:28px;
+    font-size: var(--fs-btn);
   }
 
   /* Main abaixo do aside */
@@ -233,7 +221,7 @@
     left: auto;
     right: auto;
     width: 100%;
-    height: 62vh;
+    min-height: 80vh;
     margin: 0;
     min-height: auto;
     border-radius: 0;
@@ -241,7 +229,7 @@
   }
 
   main#principal section h2 {
-    font-size: var(--FontSizeH3Mobile);
+    font-size: var(--fs-h3);
     margin: 1rem;
   }
 
@@ -255,17 +243,17 @@
 
   .card-content  ul {
     gap: .3rem;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
   .card-content ul li {
     width: 75px; height: 40px;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
   .projetosSite a {
     width: 70px; height: 35px;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
   .worksWiew {
@@ -279,7 +267,7 @@
   }
 
   .card-works-content {
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-small);
   }
 
 
@@ -337,11 +325,11 @@
   }
 
    header h1 {
-    font-size: var(--FontSizeTitulosMobile);
+    font-size: var(--fs-h2);
    }
 
   #theme-toggle {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-h3);
    }
 
   /* Aside abaixo do header */
@@ -351,29 +339,28 @@
     left: auto;
     width: 100%;
     height: auto;
-    margin-top: 3rem;
-    padding: .1rem 0;
+    margin-top: 1.5rem;
+    padding: 1.5rem 0;
     box-shadow: none;
   }
 
   .about-me h3 {
-    font-size: var(--FontSizeH3Mobile);
-    margin-top: 1rem;
+    font-size: var(--fs-h3);
+    margin-top: 1.9rem;
   }
 
   .about-me p{
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
     text-align: center;
   }
 
   .my-links ul {
-    font-size: var(--ButtonsMenuMobile);
     margin: 1rem;
   }
 
   .btn, .social-links .social-item{
-    width:32px; height:32px;
-    font-size: var(--ButtonsMenuMobile);
+    width:34px; height:34px;
+    font-size: var(--fs-body);
   }
 
   /* Main abaixo do aside */
@@ -383,7 +370,7 @@
     left: auto;
     right: auto;
     width: 100%;
-    height: 65vh;
+    min-height: 80vh;
     margin: 0;
     min-height: auto;
     border-radius: 0;
@@ -391,7 +378,7 @@
   }
 
   main#principal section h2 {
-    font-size: var(--FontSizeH3Mobile);
+    font-size: var(--fs-h3);
     margin: 1rem;
   }
 
@@ -405,17 +392,17 @@
 
   .card-content  ul {
     gap: .3rem;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
   .card-content ul li {
     width: 90px; height: 40px;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
   .projetosSite a {
     width: 70px; height: 35px;
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
   .worksWiew {
@@ -429,7 +416,7 @@
   }
 
   .card-works-content {
-    font-size: var(--FontSizeTextosMobile);
+    font-size: var(--fs-body);
   }
 
 
@@ -465,14 +452,15 @@
 
   header{
     box-shadow: none;
+    justify-content: space-around;
   }
 
   header h1 {
-    font-size: var(--FontSizeTitulosMobile);
+    font-size: var(--fs-h2);
    }
 
   #theme-toggle {
-    font-size: var(--ButtonsMenuMobile);
+    font-size: var(--fs-h3);
    }
 
   /* Aside abaixo do header */
@@ -482,25 +470,19 @@
   }
 
   .about-me h3 {
-    margin-top: 10rem;
-  }
-
-  .about-me p {
-    font-size: var(--FontSizeTextosMobile);
-    
+    margin-top: 9rem;
   }
 
   .my-links ul a{
-    margin-bottom: 20rem;
-    font-size: var(--ButtonsMenuMobile);
+    margin-bottom: 9rem;
   }
 
   main#principal {
   position: absolute; 
-  top: 1.5rem;        /* começa abaixo do nav */
-  left: 300px;        /* respeita o aside fixo */
+  top: 6.5rem;        
+  left: 300px;        
   right: 0; 
-  bottom: 0;     /* deixa espaço pro footer */
+  bottom: 3.3rem;     
   min-height: auto;
   padding: 1rem;
   }
@@ -509,7 +491,7 @@
   nav {
     position: fixed;
     bottom: auto;
-    top: 4.8rem;      
+    top: 4.4rem;      
     right: 0;    
     left: auto;        
     width: 100%;  
@@ -538,138 +520,43 @@
 }
 
 
-/* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
-/* ================================= */
+
 /* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
 @media (min-width: 1025px) and (max-width: 1366px) {
   header h1 {
-    font-size: var(--FontSizeTitulosDesktop); /* títulos equilibrados */
+    font-size: var(--fs-h2);
   }
 
-  #theme-toggle {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  .about-me h3 {
-    font-size: var(--FontSizeH3Desktop);
-  }
-
-  .about-me p {
-    font-size: var(--FontSizeTextosDesktop);
-   
-  }
-
-  .btn, .btn-projeto {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  nav a {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-
-  .projetosSite, .worksWiew {
-    flex-wrap: wrap;
-    gap: 1.2rem; /* menos espaço que desktop maior */
-  }
-
-  .card-content ul li {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  footer p {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  .nav-sections button {
-    font-size: var(--ButtonsMenuDesktop);
+  main#principal { 
+    padding-top: 1rem;
+    flex: 1;    
+    
   }
 }
 
 /* 🖥️ Monitores Full HD (Desktops padrão, iMac 21") */
 @media (min-width: 1367px) and (max-width: 1920px) {
+
   header h1 {
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.15);
+    font-size: var(--fs-h2);
   }
 
-  #theme-toggle {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  .about-me h3 {
-    font-size: calc(var(--FontSizeH3Desktop) * 1.1);
-  }
-
-  .about-me p {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  .btn, .btn-projeto {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  nav a {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  .projetosSite, .worksWiew {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .card-content ul li {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  footer p {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  .nav-sections button {
-    font-size: var(--ButtonsMenuDesktop);
+  main#principal { 
+    padding-top: 1rem;
+    flex: 1;    
+    
   }
 }
 
 /* 🖥️ Extra large screens (4K & 8K) */
 @media (min-width: 1921px) {
   header h1 {
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.25);
+    font-size: var(--fs-h2);
   }
 
-  #theme-toggle {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  .about-me h3 {
-    font-size: calc(var(--FontSizeH3Desktop) * 1.15);
-  }
-
-  .about-me p {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  .btn, .btn-projeto {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  nav a {
-    font-size: var(--ButtonsMenuDesktop);
-  }
-
-  .projetosSite, .worksWiew {
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .card-content ul li {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  footer p {
-    font-size: var(--FontSizeTextosDesktop);
-  }
-
-  .nav-sections button {
-    font-size: var(--ButtonsMenuDesktop);
+  main#principal { 
+    padding-top: 1rem;
+    flex: 1;    
+    
   }
 }

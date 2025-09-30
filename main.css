@@ -43,25 +43,33 @@ body.light-mode {
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease;}
 
-html, body {
-  overflow-x: hidden;
-  overflow-y: auto; 
+ body {
+  background-color: var(--HeaderBg);
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "aside main nav"
+    "footer footer footer";
+  grid-template-columns: 400px 1fr 200px;
+  grid-template-rows: var(--HeaderHeight) 1fr 60px;
+  min-height: 100vh;
 }
 
 /* Header */
-header {
+header {grid-area: header; 
   position: relative; z-index: 2000;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 6rem; background-color: var(--HeaderBg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-h1 { font-family: var(--fontH1); font-size: clamp(2rem,5vw,3rem); font-weight:700; }
+h1 { font-family: var(--fontH1); color: var(--TextPrimary); font-size: clamp(2rem,5vw,3rem); font-weight:700; }
 h1 span { color: var(--ColorHighlight); }
 #theme-toggle { background:none; border:none; cursor:pointer; font-size:1.5rem; color:var(--TextPrimary); }
 #theme-toggle:hover { transform: scale(1.1); }
 
 /* Sidebar */
 nav {
+  grid-area: nav;
   position: fixed; top:0; right:0; height:100vh; width:200px;
   background: var(--HeaderBg); display:flex; flex-direction:column; align-items:center;
   padding-top:10rem; gap:1.5rem; box-shadow:-2px 0 8px rgba(0,0,0,0.2); z-index:1000;
@@ -70,7 +78,7 @@ nav a { font-size:1rem; color:var(--TextPrimary); }
 nav a:hover { color:var(--ColorHighlight); transform:scale(1.05); }
 
 /* Aside */
-aside {
+aside { grid-area: aside; 
   position: fixed; left:0; top:0; height:100vh; width:400px;
   background: var(--HeaderBg); padding:2rem 1rem;
   display:flex; flex-direction:column; justify-content:space-between;
@@ -112,10 +120,20 @@ aside {
 .my-links.hide-buttons li:not(.social-wrapper) { opacity:0; pointer-events:none; }
 
 /* Main */
-main#principal { position: absolute; top: 0; left: 400px; right: 200px; min-height: calc(100vh - 60px - var(--HeaderHeight)); background-color: var(--MainBg); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: 2rem; gap: 2rem; z-index: 500; border-radius: 8px;
-
-  margin-top: var(--HeaderHeight); /* espaço pro header */
-  margin-bottom: 60px; /* espaço pro footer */
+main#principal { grid-area: main;
+  position: relative; /* dentro do grid */
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--MainBg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  gap: 2rem;
+  z-index: 500;
+  border-radius: 8px;
 }
 
 /* Estilo base dos blocos */
@@ -190,6 +208,6 @@ main#principal > div button {  display: none; }
 @keyframes fadeInUp { 0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)} }
 
 /* Footer fixo */
-footer { position: fixed; bottom:0; left:0; right:0; height:60px; background-color: var(--FooterBg); color: var(--TextSecondary); text-align:center; line-height:60px; font-family: var(--fontText); font-size:0.95rem; z-index:1500; box-shadow:0 -2px 8px rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.1) }
+footer {  grid-area: footer; position: fixed; bottom:0; left:0; right:0; height:60px; background-color: var(--FooterBg); color: var(--TextSecondary); text-align:center; line-height:60px; font-family: var(--fontText); font-size:0.95rem; z-index:1500; box-shadow:0 -2px 8px rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.1) }
 footer a { color: var(--ColorHighlight); }
 footer a:hover { color: var(--ButtonHover); }
