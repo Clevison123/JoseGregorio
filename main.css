@@ -125,9 +125,9 @@ main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }
 main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; position: relative; z-index: 1000; }
 
-main#principal > div { display:flex; gap:1rem; }
-main#principal > div button { padding:0.5rem 1rem; background-color: var(--ButtonBg); color: var(--ButtonText); border:none; border-radius:8px; cursor:pointer; z-index: 1000 }
-main#principal > div button:hover { background-color: var(--ButtonHover); transform:scale(1.05); }
+
+main#principal > div { display:flex; gap: 1rem; }
+main#principal > div button {  display: none; }
 
 /* Projetos site */
 .projetosSite{ display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 300px; margin: 0 auto; position: relative; z-index: 1000 }
