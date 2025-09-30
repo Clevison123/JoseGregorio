@@ -185,7 +185,7 @@ main#principal > div button {  display: none; }
 
 .card-works-content.fade-in { opacity: 1; transform: translateX(0); }
 
-.card-works-content a { color: var(--LinkText); transition: color 0.3s ease, transform 0.3s ease;}
+.card-works-content a { color:  #111827; transition: color 0.3s ease, transform 0.3s ease;}
 
 .card-works-content a:hover { color: var(--ColorHighlight); transform: scale(1.05); }
 
