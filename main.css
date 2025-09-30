@@ -41,9 +41,12 @@ body.light-mode {
 }
 
 /* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease; }
-html, body { overflow: hidden; height: 100%; }
-body { font-family: var(--fontText); background-color: var(--Fundo); color: var(--TextPrimary); }
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease;}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
 
 /* Header */
 header {
@@ -116,10 +119,19 @@ main#principal { position: absolute; top: 0; left: 400px; right: 200px; min-heig
 }
 
 /* Estilo base dos blocos */
-.bloco { width: 40px; height: 40px; background: #ccc; position: absolute; transition: transform 0.3s ease, background 0.3s ease;  border-radius: 8px; }
+.bloco { width: 40px; height: 40px; background: #ccc; position: absolute; transition: transform 0.3s ease, background 0.3s ease; animation: bounce 2s infinite alternate ease-in-out; border-radius: 8px; }
 
 /* Quando o mouse está em cima */
 .bloco.active { background: red; transform: scale(1.2) }
+
+@keyframes bounce {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(100% - 40px)); /* 40px = largura do bloco */
+      }
+    }
 
 main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }

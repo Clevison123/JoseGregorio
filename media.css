@@ -1,22 +1,27 @@
 @charset "UTF-8";
 
 :root{
-  --FontFamily:'Inter', sans-serif;
-  --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
-  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); 
-  --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
-  --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
-  --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
-  --LineHeightTextos: 1.5;
-  --ButtonsMenuMobile: clamp(0.85rem, 2vw, 1rem);
-  --ButtonsMenuDeskTop: clamp(1rem, 1.5vw, 1.125rem);
+   
+  /* Tipografia base */
+  --fs-h1: clamp(2rem, 5vw, 3rem);
+  --fs-h2: clamp(1.75rem, 4vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 3vw, 2rem);
+  --fs-body: clamp(1rem, 2.2vw, 1.25rem);
+  --fs-small: clamp(0.85rem, 2vw, 1rem);
+  --fs-btn: clamp(0.9rem, 2vw, 1.1rem);
 
-  --HeaderHeight: 95px;
+  /* Espaçamentos */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  /* Layout */
+  --header-height: 5.5rem;
+  --nav-height: 3.5rem;
 }
 
-/* ================================= */
 /* 📱 SMALL DEVICES (PHONES) */
-/* ================================= */
 
 /* 📱 Smartphones pequenos (iPhone SE, Galaxy S8, etc.) */
 @media (max-width: 320px) {
@@ -33,7 +38,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: .5rem 1rem;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
     z-index: 2000;
   }
 
@@ -52,14 +59,14 @@
     left: auto;
     width: 100%;
     height: auto;
-    margin-top: 3rem;
-    padding: .1rem;
+    margin-top: 1rem;
+    padding: .1rem 0;
     box-shadow: none;
   }
 
   .about-me h3 {
     font-size: var(--FontSizeH3Mobile);
-    margin-top: .5rem;
+    margin-top: 1.9rem;
   }
 
   .about-me p{
@@ -83,11 +90,11 @@
     left: auto;
     right: auto;
     width: 100%;
-    height: 57vh;
+    height: 59vh;
     margin: 0;
     min-height: auto;
     border-radius: 0;
-    padding: 0 1rem;
+    padding: 0;
   }
 
   main#principal section h2 {
@@ -95,16 +102,13 @@
     margin: 1rem;
   }
 
-  main#principal > div button {
-    display: none;
-  }
-
   .projetosSite {
+    font-size: var(--FontSizeTextosMobile);
     max-width: 240px;
   }
 
   .card-content  ul {
-    gap: .3rem;
+    gap: .2rem;
     font-size: var(--FontSizeTextosMobile);
   }
 
@@ -115,12 +119,12 @@
 
   .projetosSite a {
     width: 70px; height: 35px;
-    font-size: var(--FontSizeTextosMobile);
+    
   }
 
   .worksWiew {
-    max-width: 400px; padding: .5rem 1rem;
-    margin: 1.3rem auto;
+    max-width: 400px; padding: .5rem 0;
+    margin: 1.2rem auto;
   }
 
   .work-btn {
@@ -178,7 +182,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: .5rem 1rem;
+    padding: .5rem 0;
+    justify-content: space-around;
     z-index: 2000;
   }
 
@@ -326,7 +331,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: .5rem 1rem;
+    padding: .5rem 0;
+    justify-content: space-around;
     z-index: 2000;
   }
 
@@ -346,7 +352,7 @@
     width: 100%;
     height: auto;
     margin-top: 3rem;
-    padding: .1rem;
+    padding: .1rem 0;
     box-shadow: none;
   }
 
@@ -357,6 +363,7 @@
 
   .about-me p{
     font-size: var(--FontSizeTextosMobile);
+    text-align: center;
   }
 
   .my-links ul {
@@ -376,7 +383,7 @@
     left: auto;
     right: auto;
     width: 100%;
-    height: 67vh;
+    height: 65vh;
     margin: 0;
     min-height: auto;
     border-radius: 0;
@@ -393,7 +400,7 @@
   }
 
   .projetosSite {
-    max-width: 240px;
+    max-width: 290px;
   }
 
   .card-content  ul {
@@ -402,7 +409,7 @@
   }
 
   .card-content ul li {
-    width: 75px; height: 40px;
+    width: 90px; height: 40px;
     font-size: var(--FontSizeTextosMobile);
   }
 
@@ -442,7 +449,7 @@
     flex-direction: row; 
     justify-content: space-around;
     align-items: center;
-    padding: .7rem 0;
+    padding: .9rem 0;
     box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
     z-index: 3000;
   }
@@ -451,11 +458,13 @@
     display: none;
   }
 }
+
 /* iPad Air, iPad Pro 9.7   */
-@media (min-width: 769px) and (max-width: 1025px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+
 
   header{
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: none;
   }
 
   header h1 {
@@ -473,11 +482,17 @@
   }
 
   .about-me h3 {
-    margin-top: 14rem;
+    margin-top: 10rem;
   }
 
-  .my-links ul {
-    margin-bottom: 25rem;
+  .about-me p {
+    font-size: var(--FontSizeTextosMobile);
+    
+  }
+
+  .my-links ul a{
+    margin-bottom: 20rem;
+    font-size: var(--ButtonsMenuMobile);
   }
 
   main#principal {
@@ -485,9 +500,8 @@
   top: 1.5rem;        /* começa abaixo do nav */
   left: 300px;        /* respeita o aside fixo */
   right: 0; 
-  bottom: .2rem;     /* deixa espaço pro footer */
+  bottom: 0;     /* deixa espaço pro footer */
   min-height: auto;
-  overflow-y: auto;   /* rolagem só no main */
   padding: 1rem;
   }
 
@@ -498,14 +512,14 @@
     top: 4.8rem;      
     right: 0;    
     left: auto;        
-    width: 61%;    
+    width: 100%;  
     height: auto;  
     display: flex;
     flex-direction: row; 
     justify-content: space-around;
     align-items: center;
     padding: .7rem 0;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    box-shadow: none;
     z-index: 3000;
   }
 
@@ -515,10 +529,10 @@
     top: auto;      
     right: 0;    
     left: auto;        
-    width: 61%;    
+    width: 100%;    
     text-align: center;
-    padding: 0;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    padding: 0 ;
+    box-shadow: none;
   }
   
 }
@@ -526,136 +540,136 @@
 
 /* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
 /* ================================= */
-
 /* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
-@media (min-width: 1025px) and (max-width: 1366px){
-
-  header h1{
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.1);
+@media (min-width: 1025px) and (max-width: 1366px) {
+  header h1 {
+    font-size: var(--FontSizeTitulosDesktop); /* títulos equilibrados */
   }
 
-  #theme-toggle{
-    font-size: var(--ButtonsMenuDeskTop);
+  #theme-toggle {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .about-me h3{
-    font-size: var(--FontSizeH3Mobile);
+  .about-me h3 {
+    font-size: var(--FontSizeH3Desktop);
   }
 
-  .about-me p{
+  .about-me p {
     font-size: var(--FontSizeTextosDesktop);
+   
   }
 
-  .btn, .btn-projeto{
-    font-size: var(--ButtonsMenuDeskTop);
+  .btn, .btn-projeto {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  nav a{
-    font-size: var(--ButtonsMenuDeskTop);
+  nav a {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .projetosSite, .worksWiew{
+
+  .projetosSite, .worksWiew {
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.2rem; /* menos espaço que desktop maior */
   }
 
-  .card-content ul li{
+  .card-content ul li {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  footer p{
+  footer p {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  .nav-sections button{
-    font-size: var(--ButtonsMenuDeskTop);
+  .nav-sections button {
+    font-size: var(--ButtonsMenuDesktop);
   }
 }
 
 /* 🖥️ Monitores Full HD (Desktops padrão, iMac 21") */
-@media (min-width: 1367px) and (max-width: 1920px){
-  header h1{
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.2);
+@media (min-width: 1367px) and (max-width: 1920px) {
+  header h1 {
+    font-size: calc(var(--FontSizeTitulosDesktop) * 1.15);
   }
 
-  #theme-toggle{
-    font-size: var(--ButtonsMenuDeskTop);
+  #theme-toggle {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .about-me h3{
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.2);
+  .about-me h3 {
+    font-size: calc(var(--FontSizeH3Desktop) * 1.1);
   }
 
-  .about-me p{
+  .about-me p {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  .btn, .btn-projeto{
-    font-size: var(--ButtonsMenuDeskTop);
+  .btn, .btn-projeto {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  nav a{
-    font-size: var(--ButtonsMenuDeskTop);
+  nav a {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .projetosSite, .worksWiew{
+  .projetosSite, .worksWiew {
     flex-wrap: wrap;
     gap: 1.5rem;
   }
 
-  .card-content ul li{
+  .card-content ul li {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  footer p{
+  footer p {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  .nav-sections button{
-    font-size: var(--ButtonsMenuDeskTop);
+  .nav-sections button {
+    font-size: var(--ButtonsMenuDesktop);
   }
 }
 
 /* 🖥️ Extra large screens (4K & 8K) */
-@media (min-width: 1921px){
-  header h1{
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.3);
+@media (min-width: 1921px) {
+  header h1 {
+    font-size: calc(var(--FontSizeTitulosDesktop) * 1.25);
   }
 
-  #theme-toggle{
-    font-size: var(--ButtonsMenuDeskTop);
+  #theme-toggle {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .about-me h3{
-    font-size: calc(var(--FontSizeTitulosDesktop) * 1.3);
+  .about-me h3 {
+    font-size: calc(var(--FontSizeH3Desktop) * 1.15);
   }
 
-  .about-me p{
+  .about-me p {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  .btn, .btn-projeto{
-    font-size: var(--ButtonsMenuDeskTop);
+  .btn, .btn-projeto {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  nav a{
-    font-size: var(--ButtonsMenuDeskTop);
+  nav a {
+    font-size: var(--ButtonsMenuDesktop);
   }
 
-  .projetosSite, .worksWiew{
+  .projetosSite, .worksWiew {
     flex-wrap: wrap;
     gap: 2rem;
   }
 
-  .card-content ul li{
+  .card-content ul li {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  footer p{
+  footer p {
     font-size: var(--FontSizeTextosDesktop);
   }
 
-  .nav-sections button{
-    font-size: var(--ButtonsMenuDeskTop);
+  .nav-sections button {
+    font-size: var(--ButtonsMenuDesktop);
   }
 }
