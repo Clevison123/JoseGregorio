@@ -89,17 +89,67 @@ const BackToTopModule = (() => {
 })();
 
 // Project Data
+const frontendProjects = [
+  { 
+  title: "To-Do List", 
+  description: "Interactive app to manage tasks using HTML, CSS, and JavaScript.", 
+  link: "https://to-do-listfe.netlify.app/", 
+  image: "frontend1.png" 
+},
+{ 
+  title: "Pomodoro Timer", 
+  description: "Timer based on the Pomodoro technique to boost productivity.", 
+  link: "https://pomodoro-timerfe.netlify.app/", 
+  image: "frontend2.png" 
+},
+{ 
+  title: "SideBar", 
+  description: "Modern and responsive sidebar menu for website navigation.", 
+  link: "https://sidebar-fe.netlify.app/", 
+  image: "frontend3.png" 
+},
+{ 
+  title: "Color Picker Generator", 
+  description: "Tool to generate and copy custom colors in HEX and RGB.", 
+  link: "https://color-picker-generator-fe.netlify.app/", 
+  image: "frontend1.png" 
+},
+{ 
+  title: "Expense Tracker", 
+  description: "Simple app for expense control and financial tracking.", 
+  link: "https://expense-trackerfe.netlify.app/", 
+  image: "frontend2.png" 
+},
+{ 
+  title: "Calculator", 
+  description: "Functional calculator built with HTML, CSS, and JavaScript.", 
+  link: "https://calculator-fe.netlify.app/", 
+  image: "frontend3.png" 
+},
+/*
+{ 
+  title: "Digital Clock", 
+  description: "Dynamic digital clock updated in real time.", 
+  link: "https://digital-clock-fe.netlify.app/", 
+  image: "frontend2.png" 
+},
+*/
+{ 
+  title: "Password Generator", 
+  description: "Secure and customizable password generator for better protection.", 
+  link: "https://password-generator-fe.netlify.app/", 
+  image: "frontend3.png" 
+}
+
+];
+
 const backendProjects = [
   { title: "API C#", description: "API de autenticação em C#", link: "#", image: "backend1.png" },
   { title: "SQL Manager", description: "Sistema de gerenciamento em SQL", link: "#", image: "backend2.png" },
   { title: "REST Service", description: "Serviço REST em ASP.NET", link: "#", image: "backend3.png" }
 ];
 
-const frontendProjects = [
-  { title: "Portfolio", description: "Meu portfólio com HTML, CSS e JS", link: "#", image: "frontend1.png" },
-  { title: "Game Platform", description: "Plataforma de jogos com design responsivo", link: "#", image: "frontend2.png" },
-  { title: "Landing Page", description: "Landing page moderna", link: "#", image: "frontend3.png" }
-];
+
 
 // Initialize everything
 document.addEventListener("DOMContentLoaded", () => {
