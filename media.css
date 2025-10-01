@@ -449,11 +449,6 @@
 /* iPad Air, iPad Pro 9.7   */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-
- 
-
   header h1 {
     font-size: var(--fs-h2);
   }
