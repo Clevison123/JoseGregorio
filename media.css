@@ -450,18 +450,41 @@
 @media (min-width: 769px) and (max-width: 1024px) {
 
 
-  header{
-    box-shadow: none;
-    justify-content: space-around;
-  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+
+ 
 
   header h1 {
     font-size: var(--fs-h2);
-   }
+  }
 
   #theme-toggle {
     font-size: var(--fs-h3);
-   }
+  }
+
+   header {
+    box-shadow: none;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  
+  }
+
+  nav {
+    position: absolute; 
+    top: 5rem;  
+    left: 0;  
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: .7rem 0;
+    z-index: 3000;
+  }
+
+
 
   /* Aside abaixo do header */
   aside {
@@ -479,30 +502,12 @@
 
   main#principal {
   position: absolute; 
-  top: 6.5rem;        
+  top: 7.5rem;        
   left: 300px;        
   right: 0; 
-  bottom: 3.3rem;     
+  bottom: 3.7rem;     
   min-height: auto;
   padding: 1rem;
-  }
-
-
-  nav {
-    position: fixed;
-    bottom: auto;
-    top: 4.4rem;      
-    right: 0;    
-    left: auto;        
-    width: 100%;  
-    height: auto;  
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-around;
-    align-items: center;
-    padding: .7rem 0;
-    box-shadow: none;
-    z-index: 3000;
   }
 
    footer {
