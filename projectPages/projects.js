@@ -94,51 +94,51 @@ const frontendProjects = [
   title: "To-Do List", 
   description: "Interactive app to manage tasks using HTML, CSS, and JavaScript.", 
   link: "https://to-do-listfe.netlify.app/", 
-  image: "frontend1.png" 
+  image: "/projectPages/projectImgs/todo.png" 
 },
 { 
   title: "Pomodoro Timer", 
   description: "Timer based on the Pomodoro technique to boost productivity.", 
   link: "https://pomodoro-timerfe.netlify.app/", 
-  image: "frontend2.png" 
+  image: "/projectPages/projectImgs/pomodoro.png" 
 },
 { 
   title: "SideBar", 
   description: "Modern and responsive sidebar menu for website navigation.", 
   link: "https://sidebar-fe.netlify.app/", 
-  image: "frontend3.png" 
+  image: "/projectPages/projectImgs/sidebar.png" 
 },
 { 
   title: "Color Picker Generator", 
   description: "Tool to generate and copy custom colors in HEX and RGB.", 
   link: "https://color-picker-generator-fe.netlify.app/", 
-  image: "frontend1.png" 
+  image: "/projectPages/projectImgs/colorpicker.png" 
 },
 { 
   title: "Expense Tracker", 
   description: "Simple app for expense control and financial tracking.", 
   link: "https://expense-trackerfe.netlify.app/", 
-  image: "frontend2.png" 
+  image: "/projectPages/projectImgs/expensetracker.png" 
 },
 { 
   title: "Calculator", 
   description: "Functional calculator built with HTML, CSS, and JavaScript.", 
   link: "https://calculator-fe.netlify.app/", 
-  image: "frontend3.png" 
+  image: "/projectPages/projectImgs/calculator.png" 
 },
-/*
+
 { 
   title: "Digital Clock", 
   description: "Dynamic digital clock updated in real time.", 
   link: "https://digital-clock-fe.netlify.app/", 
-  image: "frontend2.png" 
+  image: "/projectPages/projectImgs/digitalclock.png" 
 },
-*/
+
 { 
   title: "Password Generator", 
   description: "Secure and customizable password generator for better protection.", 
   link: "https://password-generator-fe.netlify.app/", 
-  image: "frontend3.png" 
+  image: "/projectPages/projectImgs/password.png" 
 }
 
 ];
