@@ -144,9 +144,33 @@ const frontendProjects = [
 ];
 
 const backendProjects = [
-  { title: "API C#", description: "API de autenticação em C#", link: "#", image: "backend1.png" },
-  { title: "SQL Manager", description: "Sistema de gerenciamento em SQL", link: "#", image: "backend2.png" },
-  { title: "REST Service", description: "Serviço REST em ASP.NET", link: "#", image: "backend3.png" }
+  { 
+    title: "Book Management API", 
+    description: "Manages books via a REST API with CRUD operations using ASP.NET Core and Entity Framework.", 
+    link: "#", 
+    image: "/projectPages/backendimgs/bookAPI.png" 
+  },
+
+  { 
+    title: "Banking System Console App", 
+    description: "Console app to manage bank accounts, supporting create, deposit, withdraw, transfer, apply interest, and view transaction history.", 
+    link: "#", 
+    image: "/projectPages/backendimgs/bankAccount.png" 
+  },
+
+  { 
+    title: "Contact Management Console App", 
+    description: "Console app to manage contacts with add, list, favorite, and remove features.", 
+    link: "#", 
+    image: "/projectPages/backendimgs/menuContact.png" 
+  },
+
+  { 
+    title: "Customer Service Queue System", 
+    description: "Console app managing normal and priority customer queues with add, call, and display features.", 
+    link: "#", 
+    image: "/projectPages/backendimgs/queue.png" 
+  }
 ];
 
 
