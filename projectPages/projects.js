@@ -187,7 +187,7 @@ const backendProjects = [
   { 
     title: "Customer Service Queue System", 
     description: "Console app managing normal and priority customer queues with add, call, and display features.", 
-    link: "#", 
+    link: "https://hub.docker.com/repository/docker/josegregorio/sistema-atendimento-app", 
     image: "/projectPages/backendimgs/queue.png",
     summary: "The Service System is a console application in C# that manages a queue of customers using object-oriented principles and a queue data structure. It defines an abstract Person class, which is extended by the Customer class, demonstrating inheritance, abstraction, and polymorphism. Customers aged 60 or older are automatically marked as priority. The system uses two queues: a priority queue for senior customers and a regular queue for others. Users can add customers to the queue, call the next customer (giving priority to seniors), and view the current state of both queues. The application validates input, displays clear messages, and ensures a fair and organized service flow by handling priority and regular customers separately."
   }
