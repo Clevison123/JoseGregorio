@@ -171,7 +171,7 @@ const backendProjects = [
   { 
     title: "Banking System Console App", 
     description: "Console app to manage bank accounts, supporting create, deposit, withdraw, transfer, apply interest, and view transaction history.", 
-    link: "#", 
+    link: "https://github.com/Clevison123/BankAccount", 
     image: "/projectPages/backendimgs/bankAccount.png",
     summary: "The Banking System is a console application in C# that allows users to manage multiple bank accounts. Each account stores the account number, holder information, balance, password, transaction history, and limits for withdrawals and overdrafts. Users can create accounts, list existing accounts, deposit money, withdraw funds (with password verification and limit checks), transfer money between accounts, and apply interest to all accounts. The system tracks all operations in a transaction history for each account and ensures that accounts with non-zero balances cannot be deleted. Input validation and clear messages guide the user through the menu-driven interface, providing a safe and organized way to manage banking operations during runtime."
   },
@@ -179,7 +179,7 @@ const backendProjects = [
   { 
     title: "Contact Management Console App", 
     description: "Console app to manage contacts with add, list, favorite, and remove features.", 
-    link: "#", 
+    link: "https://github.com/Clevison123/ContactManagementSystem", 
     image: "/projectPages/backendimgs/menuContact.png",
     summary: "The Contact Agenda is a console application in C# that allows users to manage a list of personal contacts. It lets users add new contacts with a name, phone number, and email, list all registered contacts, mark contacts as favorites, and remove contacts by ID. Each contact stores the creation date and a favorite status. The application validates user input, provides clear feedback for errors or invalid IDs, and continuously prompts users through an intuitive menu until they choose to exit. All operations are handled efficiently, ensuring a simple and predictable way to manage contacts during runtime." 
   },
