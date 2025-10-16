@@ -160,13 +160,13 @@ const frontendProjects = [
 ];
 
 const backendProjects = [
-  { 
+ /* { 
     title: "Book Management API", 
     description: "Manages books via a REST API with CRUD operations using ASP.NET Core and Entity Framework.", 
     link: "https://github.com/Clevison123/FirstAPI", 
     image: "/projectPages/backendimgs/bookAPI.png",
     summary: "The BooksController is responsible for managing books in the system by connecting to the database through FirstAPIContext. It provides all basic CRUD operations for books. The GetBooks() function retrieves and returns all registered books. The GetBookById(id) function searches for a specific book by its ID, returning the book if it exists or “Not Found” if it does not. The AddBook(newBook) function allows adding a new book to the database, returning an error if the input data is invalid and the newly created book if successful. The UpdateBook(id, updatedBook) function searches for a book by ID, updates its details if the book exists, and saves the changes, otherwise returning “Not Found”. Finally, the DeleteBook(id) function searches for a book by ID, removes it from the database if found, and saves the changes, returning “Not Found” if the book does not exist. This controller ensures that all operations for retrieving, adding, updating, and deleting books are handled efficiently, safely, and with clear responses for any errors or missing data."
-  },
+  },*/
 
   { 
     title: "Banking System Console App", 
