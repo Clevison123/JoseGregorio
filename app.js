@@ -32,7 +32,7 @@ document.addEventListener('click', () => {
 
 // Works
 const works = [
-  { title: "Freelancer – Frontend", date: "São Paulo – Mai/2023 a Jul/2023", project: "Site para Salão de Beleza", link: "https://salaovts.netlify.app/" }
+  { title: "Freelancer – Frontend", date: "São Paulo – Mai/2023 a Jul/2023", project: "Site para Salão de Beleza", link: "#" }
   /*{ title: "Freelancer – Backend", date: "São Paulo – Mar/2025 a jun/2025", project: "Sistema de Estoque", link: "#" },*/
 ];
 
