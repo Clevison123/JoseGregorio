@@ -114,17 +114,36 @@ class Bloco {
   updatePos() { Object.assign(this.el.style, { left: `${this.x}px`, top: `${this.y}px` }); }
 
   checkWalls() {
-    if (this.x <= 0 || this.x + this.bw >= this.mw) {
-      this.vx = -this.vx * (1 - acceleration);
-      this.x = Math.max(0, Math.min(this.mw - this.bw, this.x));
-      this.changeColor();
-    }
-    if (this.y <= 0 || this.y + this.bh >= this.mh) {
-      this.vy = -this.vy * (1 - acceleration);
-      this.y = Math.max(0, Math.min(this.mh - this.bh, this.y));
-      this.changeColor();
-    }
+  // Borda esquerda
+  if (this.x < 0) {
+    this.x = 0;
+    this.vx = Math.abs(this.vx) * (1 - acceleration);
+    this.changeColor();
   }
+
+  // Borda direita
+  if (this.x + this.bw > this.mw) {
+    this.x = this.mw - this.bw;
+    this.vx = -Math.abs(this.vx) * (1 - acceleration);
+    this.changeColor();
+  }
+
+  // Borda superior
+  if (this.y < 0) {
+    this.y = 0;
+    this.vy = Math.abs(this.vy) * (1 - acceleration);
+    this.changeColor();
+  }
+
+  // Borda inferior
+  if (this.y + this.bh > this.mh) {
+    this.y = this.mh - this.bh;
+    this.vy = -Math.abs(this.vy) * (1 - acceleration);
+    this.changeColor();
+  }
+}
+
+
 
   move() { this.x += this.vx; this.y += this.vy; this.updatePos(); }
 

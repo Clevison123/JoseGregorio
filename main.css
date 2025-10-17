@@ -124,7 +124,7 @@ aside { grid-area: aside;
 
 /* Main */
 main#principal { grid-area: main;
-  position: relative; /* dentro do grid */
+  position: relative; 
   margin: 0;
   min-height: 100%;
   background-color: var(--MainBg);
@@ -145,14 +145,6 @@ main#principal { grid-area: main;
 /* Quando o mouse está em cima */
 .bloco.active { background: red; transform: scale(1.2) }
 
-@keyframes bounce {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(calc(100% - 40px)); /* 40px = largura do bloco */
-      }
-    }
 
 main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }
