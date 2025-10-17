@@ -13,12 +13,12 @@
 @media (max-width: 320px){
   header{
     padding: 1rem 0;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
   }
 
   header nav ul{
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
   }
 
@@ -49,12 +49,12 @@
 @media (min-width: 321px) and (max-width: 480px){
   header{
     padding: 1rem 0;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
   }
 
   header nav ul{
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
   }
 
