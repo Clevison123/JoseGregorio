@@ -29,21 +29,24 @@ body.light-mode {
   --HeaderBg: #FFFFFF;
   --TextPrimary: #111827;
   --TextSecondary: #4B5563;
-  --ColorHighlight: #22C55E;
   --Fundo: #F9FAFB;     
   --MainBg: #E5E9F0;     
   --FooterBg: #E5E7EB;
-  --ButtonBg: #22C55E;
-  --ButtonHover: #16A34A;
-  --ButtonText: #FFFFFF;
   --LinkText: #111827;
-  --mainWorks: #4B5563;
 }
 
-/* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease;}
 
- body {
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+body {
   background-color: var(--HeaderBg);
   display: grid;
   grid-template-areas: 
@@ -74,8 +77,6 @@ nav {
   background: var(--HeaderBg); display:flex; flex-direction:column; align-items:center;
   padding-top:10rem; gap:1.5rem; box-shadow:-2px 0 8px rgba(0,0,0,0.2); z-index:1000;
 }
-
-
 
 nav a { font-size:1rem; color:var(--TextPrimary); -webkit-tap-highlight-color: transparent; outline: none; }
 nav a:hover { color:var(--ColorHighlight); transform:scale(1.05); }
@@ -145,11 +146,9 @@ main#principal { grid-area: main;
 /* Quando o mouse está em cima */
 .bloco.active { background: red; transform: scale(1.2) }
 
-
 main#principal section { display: none; width: 100%; }
 main#principal section.active { display: block; }
 main#principal section h2 { font-family: var(--fontTitle); font-size: clamp(1.5rem, 3vw, 2.5rem); text-align:center; color: var(--TextPrimary); margin-bottom:1.5rem; position: relative; z-index: 1000; }
-
 
 main#principal > div { display:flex; gap: 1rem; }
 main#principal > div button {  display: none; }

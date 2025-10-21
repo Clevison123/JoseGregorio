@@ -22,6 +22,15 @@
 
 * { font-family: var(--font-text); margin: 0; padding: 0; color: var(--color-text-primary); text-decoration: none; list-style: none; box-sizing: border-box; }
 
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 html { scroll-behavior: smooth; }
 
 
