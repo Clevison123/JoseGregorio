@@ -73,7 +73,7 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 0.8fr; gap: 1rem; padd
 .floatBlock li { display: inline-block;
 }
 
-.floatBlock a { display: flex; align-items: center; gap: 0.5rem; background: #16213e; color: white; padding: 0.8rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+.floatBlock a { display: flex; align-items: center; gap: 0.5rem; background: #16213e; color: white; padding: 0.8rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; -webkit-tap-highlight-color: transparent; outline: none;
 }
 
 /* Ícones dentro dos balões */

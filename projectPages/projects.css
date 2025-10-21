@@ -78,23 +78,23 @@ main h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; color: var(-
 .project-card p { font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 1rem; }
 
 /* Botão */
-.project-card .button { display: inline-block; padding: 0.5rem 1rem; background: var(--color-button-bg); color: var(--color-button-text); border-radius: 6px; text-decoration: none; font-size: 0.9rem; transition: background 0.3s ease; }
+.project-card .button { display: inline-block; padding: 0.5rem 1rem; background: var(--color-button-bg); color: var(--color-button-text); border-radius: 6px; text-decoration: none; font-size: 0.9rem; transition: background 0.3s ease; -webkit-tap-highlight-color: transparent; outline: none; }
 
 .project-card .button:hover { background: var(--color-button-hover); }
 
 /* Botão voltar ao topo */
-#backToTop { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; border-radius: 50%; border: none; background: var(--color-button-bg); color: var(--color-button-text); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 999; }
+#backToTop { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; border-radius: 50%; border: none; background: var(--color-button-bg); color: var(--color-button-text); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; -webkit-tap-highlight-color: transparent; outline: none; z-index: 999; }
 
 #backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
 #backToTop:hover { background: var(--color-button-hover); }
 
 /* MODAL */
-.modal { display: none;  position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(3px); justify-content: center; align-items: center; }
+.modal { display: none;  position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(3px); justify-content: center; align-items: center;  -webkit-tap-highlight-color: transparent; outline: none;}
 
 .modal-content { background: var(--color-section2); color: var(--color-text-primary); border-radius: 10px; padding: 2rem; max-width: 500px; text-align: left; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); position: relative; animation: fadeUp 0.3s ease forwards; }
 
-.close-btn { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: var(--color-highlight); }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: var(--color-highlight); -webkit-tap-highlight-color: transparent; outline: none; }
 
 .button-group { display: flex; justify-content: center; gap: 10px; }
 
