@@ -36,11 +36,11 @@ header h1 span { color: var(--color-highlight); }
 
 header nav ul { display: flex; gap: 1.5rem; }
 
-header nav a { color: var(--color-text-primary); font-weight: 500; transition: color 0.3s ease; }
+header nav a { color: var(--color-text-primary); font-weight: 500; transition: color 0.3s ease;-webkit-tap-highlight-color: transparent; outline: none; }
 
 header nav a:hover { color: var(--color-highlight); }
 
-header .button { background-color: var(--color-button-bg); color: var(--color-button-text); border: 2px solid var(--color-highlight); padding: 0.4rem 1rem; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease; }
+header .button { background-color: var(--color-button-bg); color: var(--color-button-text); border: 2px solid var(--color-highlight); padding: 0.4rem 1rem; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;-webkit-tap-highlight-color: transparent; outline: none; }
 
 header .button:hover { background-color: var(--color-button-hover); }
 
