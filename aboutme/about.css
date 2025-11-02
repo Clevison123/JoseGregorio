@@ -17,16 +17,7 @@
 
 }
 
-* { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box;
-}
-
-button,
-a,
-input,
-textarea,
-select {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
+* { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none;
 }
 
 body { height: 100vh; overflow: hidden;  font-family: var(--fontText); background: var(--bgMain); color: var(--textPrimary); display: flex;
