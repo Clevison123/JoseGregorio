@@ -35,16 +35,18 @@ body.light-mode {
   --LinkText: #111827;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; scroll-behavior: smooth; transition: all 0.3s ease;}
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; transition: all 0.3s ease;}
 
+/*
 button,
 a,
 input,
 textarea,
 select {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
+  
+  
 }
+*/
 
 body {
   background-color: var(--HeaderBg);
