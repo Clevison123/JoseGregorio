@@ -56,7 +56,7 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 0.8fr; gap: 1rem; padd
 }
 
 
-.Introduction p { margin-bottom: 1rem; margin: 0 3rem 0 3rem; font-size: 1rem; text-indent: 1.1rem; text-align: justify; color: var(--textSecondary);
+.Introduction p { margin-bottom: 1rem; margin: 0 3rem 0 3rem; font-size: 1rem; text-indent: 1.1rem; text-align: left; color: var(--textSecondary);
 }
 
 
