@@ -12,7 +12,7 @@
   --ButtonsMenuDeskTop: clamp(1rem, 1.5vw, 1.125rem);
 }
 
-/* 📱 SMALL DEVICES (PHONES) */
+/*SMALL DEVICES PHONES */
 
 @media (max-width: 320px){
   header h1{
@@ -40,7 +40,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosMobile);
-    margin: 0 .4rem; 
+    margin: 0 auto; 
     margin-bottom: .4rem;
   }
 
@@ -62,7 +62,7 @@
 
 }
 
-/* 📱 Smartphones médios (321px - 480px) */
+/* Smartphones médios */
 @media (min-width: 321px) and (max-width: 480px){
   header h1{
     font-size: var(--FontSizeTitulosMobile);
@@ -89,7 +89,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosMobile);
-    margin: .5rem .4rem; 
+    margin: .5rem auto; 
   }
 
   #extra{
@@ -109,11 +109,7 @@
   }
 }
 
-/* ================================= */
-/* 📟 MEDIUM DEVICES (TABLETS) */
-/* ================================= */
-
-/* Tablets pequenos (481px - 768px) */
+/* Tablets pequenos  */
 @media (min-width: 481px) and (max-width: 768px){
   header h1{
     font-size: var(--FontSizeTitulosMobile);
@@ -140,7 +136,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosMobile);
-    margin: 0 .5rem; 
+    margin: 0 auto; 
     margin-bottom: .3rem;
   }
 
@@ -161,7 +157,7 @@
   }
 }
 
-/* Tablets grandes (769px - 1024px) */
+/* Tablets grandes */
 @media (min-width: 769px) and (max-width: 1024px){
   
 
@@ -176,7 +172,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosMobile);
-    margin: 0 .4rem; 
+    margin: 0 auto; 
   }
 
   #extra{
@@ -197,11 +193,8 @@
   }
 }
 
-/* ================================= */
-/* 💻 LARGE DEVICES (DESKTOPS & LAPTOPS) */
-/* ================================= */
 
-/* Notebooks pequenos (1025px - 1366px) */
+/* Notebooks pequenos  */
 @media (min-width: 1025px) and (max-width: 1366px){
   
 
@@ -212,7 +205,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosDesktop);
-    margin: 0 .4rem; 
+    margin: 0 auto; 
   }
 
 
@@ -228,7 +221,7 @@
   
 }
 
-/* Monitores Full HD (1367px - 1920px) */
+/* Monitores Full HD */
 @media (min-width: 1367px) and (max-width: 1920px){
   
   .Introduction h2 {
@@ -237,7 +230,7 @@
 
   .Introduction p {
     font-size: var(--FontSizeTextosDesktop);
-    margin: 0 .4rem; 
+    margin: 0 auto; 
   }
 
   #extra h2 {
@@ -249,7 +242,7 @@
   }
 }
 
-/* Extra large screens (4K, 1921px - 2560px) */
+/* Extra large screens */
 @media (min-width: 1921px) and (max-width: 2560px){
 
   header h1 {
@@ -288,7 +281,7 @@
   }
 }
 
-/* Ultra wide screens (>2561px) */
+/* Ultra wide screens  */
 @media (min-width: 2561px){
   header h1 {
     font-size: var(--FontSizeTitulosDesktop);
